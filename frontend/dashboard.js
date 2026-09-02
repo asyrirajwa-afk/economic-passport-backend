@@ -1850,7 +1850,7 @@ async function loadDashboardDetails() {
             ),
 
             fetchDashboardEndpoint(
-                `/dashboard/${id}/marketplace-recommendation`
+                `/passport/${id}/marketplace-recommendation`
             )
 
         ]);
