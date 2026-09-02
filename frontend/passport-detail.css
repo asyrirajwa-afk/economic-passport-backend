@@ -1,0 +1,1395 @@
+/* =====================================================
+   PASSPORT DETAIL
+   ECONOMIC PASSPORT
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #182338;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e3e7ee;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.header-inner {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.brand-icon {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #123f68;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.brand-text h1 {
+    font-size: 15px;
+
+    font-weight: 750;
+
+    color: #14243a;
+}
+
+
+.brand-text p {
+    margin-top: 2px;
+
+    color: #7b8492;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.logout-button {
+    padding:
+        8px 15px;
+
+    border:
+        1px solid #d8dee7;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.logout-button:hover {
+    background: #f4f6f9;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.page-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+        32px 24px 60px;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+    border: none;
+
+    background: transparent;
+
+    color: #1d527e;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    margin-bottom: 22px;
+}
+
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+
+.eyebrow {
+    display: block;
+
+    color: #236087;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 7px;
+}
+
+
+.page-heading h2 {
+    color: #14243a;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+}
+
+
+.page-heading p {
+    color: #718096;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: 7px;
+}
+
+
+.business-name {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding:
+        7px 11px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 7px;
+
+    color: #334155;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+/* =====================================================
+   PASSPORT CARD
+===================================================== */
+
+.passport-card {
+    background: #ffffff;
+
+    border:
+        1px solid #d8e0e9;
+
+    border-radius: 15px;
+
+    padding: 27px;
+
+    box-shadow:
+        0 6px 20px rgba(
+            30,
+            45,
+            65,
+            0.05
+        );
+
+    margin-bottom: 31px;
+}
+
+
+.passport-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   PASSPORT INFO
+===================================================== */
+
+.passport-label {
+    display: block;
+
+    color: #6d8298;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.passport-info h3 {
+    margin-top: 7px;
+
+    color: #14243a;
+
+    font-size: 23px;
+
+    font-weight: 750;
+}
+
+
+.passport-info p {
+    margin-top: 7px;
+
+    color: #7b8492;
+
+    font-size: 10px;
+}
+
+
+.passport-info p strong {
+    color: #35465a;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   SCORE
+===================================================== */
+
+.score-container {
+    min-width: 160px;
+
+    text-align: right;
+
+    padding-left: 25px;
+
+    border-left:
+        1px solid #e4e9ef;
+}
+
+
+.score-container span {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+
+    font-weight: 650;
+}
+
+
+.score-container strong {
+    display: inline-block;
+
+    margin-top: 3px;
+
+    color: #145486;
+
+    font-size: 43px;
+
+    line-height: 1;
+
+    font-weight: 850;
+}
+
+
+.score-container small {
+    color: #7b8492;
+
+    font-size: 10px;
+
+    margin-left: 2px;
+}
+
+
+/* =====================================================
+   STATUS ROW
+===================================================== */
+
+.passport-status-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding-top: 19px;
+
+    border-top:
+        1px solid #edf0f4;
+}
+
+
+.status-item {
+    background: #f7f9fc;
+
+    border-radius: 8px;
+
+    padding:
+        12px 14px;
+}
+
+
+.status-item span {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+
+    margin-bottom: 5px;
+}
+
+
+.status-item strong {
+    color: #293b50;
+
+    font-size: 11px;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   STATUS BADGE
+===================================================== */
+
+.status-badge {
+    display: inline-block;
+
+    padding:
+        4px 8px;
+
+    background: #edf5fb;
+
+    color: #205e89 !important;
+
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section-block {
+    margin-bottom: 30px;
+}
+
+
+.section-heading {
+    margin-bottom: 13px;
+}
+
+
+.section-heading h3 {
+    color: #17263b;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+.section-heading p {
+    margin-top: 4px;
+
+    color: #7b8492;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   TARGET CARD
+===================================================== */
+
+.target-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+}
+
+
+.target-main span {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+}
+
+
+.target-main strong {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    color: #145486;
+
+    font-size: 30px;
+
+    font-weight: 800;
+}
+
+
+.target-main small {
+    color: #7b8492;
+
+    font-size: 9px;
+}
+
+
+.target-status {
+    justify-self: center;
+
+    padding:
+        7px 12px;
+
+    background: #eaf7ef;
+
+    color: #23804d;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 750;
+}
+
+
+.target-gap {
+    justify-self: end;
+
+    text-align: right;
+}
+
+
+.target-gap span {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+}
+
+
+.target-gap strong {
+    color: #293b50;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+.target-gap small {
+    color: #7b8492;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   CATEGORY LIST
+===================================================== */
+
+.category-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 12px;
+}
+
+
+.category-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 11px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+
+    transition:
+        0.2s ease;
+}
+
+
+.category-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 17px rgba(
+            30,
+            45,
+            65,
+            0.06
+        );
+}
+
+
+.category-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.category-top h4 {
+    color: #293a50;
+
+    font-size: 13px;
+
+    font-weight: 750;
+}
+
+
+.category-top span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8993a0;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+.category-top > strong {
+    color: #145486;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   CATEGORY PROGRESS
+===================================================== */
+
+.category-progress {
+    width: 100%;
+
+    height: 7px;
+
+    margin-top: 14px;
+
+    background: #e9edf2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.category-progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: #2c6897;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.5s ease;
+}
+
+
+/* =====================================================
+   CATEGORY BOTTOM
+===================================================== */
+
+.category-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+}
+
+
+.category-bottom span {
+    color: #8993a0;
+
+    font-size: 9px;
+}
+
+
+.category-bottom strong {
+    color: #23804d;
+
+    font-size: 9px;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   HIGHLIGHTS
+===================================================== */
+
+.highlight-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 12px;
+}
+
+
+.highlight-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+}
+
+
+.highlight-card.strongest {
+    border-left:
+        4px solid #2c6897;
+}
+
+
+.highlight-card.weakest {
+    border-left:
+        4px solid #a5aeb9;
+}
+
+
+.highlight-label {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+
+.highlight-card h4 {
+    margin-top: 8px;
+
+    color: #24364b;
+
+    font-size: 18px;
+
+    font-weight: 750;
+}
+
+
+.highlight-score {
+    margin-top: 9px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+}
+
+
+.highlight-score strong {
+    color: #145486;
+
+    font-size: 28px;
+
+    font-weight: 800;
+}
+
+
+.highlight-score span {
+    color: #8993a0;
+
+    font-size: 9px;
+}
+
+
+.highlight-card p {
+    margin-top: 8px;
+
+    color: #7b8492;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SUMMARY CARD
+===================================================== */
+
+.summary-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    margin-bottom: 32px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+}
+
+
+.summary-header {
+    margin-bottom: 13px;
+}
+
+
+.summary-header h3 {
+    color: #17263b;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+.summary-content {
+    padding:
+        15px 17px;
+
+    background: #f7f9fc;
+
+    border-radius: 8px;
+}
+
+
+.summary-content p {
+    color: #526174;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation-section {
+    background: #122238;
+
+    border-radius: 13px;
+
+    padding: 22px;
+
+    margin-top: 35px;
+}
+
+
+.navigation-section .eyebrow {
+    color: #9fc1dc;
+}
+
+
+.navigation-header h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+.navigation-header p {
+    margin-top: 5px;
+
+    color: #b7c4d2;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.navigation-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 17px;
+}
+
+
+.nav-button {
+    border:
+        1px solid #cfd8e3;
+
+    background: #ffffff;
+
+    color: #29425b;
+
+    border-radius: 7px;
+
+    padding:
+        9px 13px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.nav-button:hover {
+    background: #eef3f7;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-state {
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #7b8492;
+
+    font-size: 12px;
+}
+
+
+.loading-spinner {
+    width: 32px;
+
+    height: 32px;
+
+    border:
+        3px solid #e1e6ed;
+
+    border-top-color: #2c6897;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+    margin-bottom: 12px;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-state {
+    min-height: 55vh;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.error-icon {
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    background: #fff0ef;
+
+    color: #c7463d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+
+.error-state h3 {
+    color: #26364c;
+
+    font-size: 17px;
+}
+
+
+.error-state p {
+    margin-top: 5px;
+
+    color: #7b8492;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    max-width: 450px;
+}
+
+
+.retry-button {
+    margin-top: 15px;
+
+    border: none;
+
+    background: #1f5c8c;
+
+    color: #ffffff;
+
+    padding:
+        9px 14px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.retry-button:hover {
+    background: #174b73;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .passport-card-top {
+        align-items: flex-start;
+    }
+
+
+    .category-list {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .page-container {
+        padding:
+            25px 18px 45px;
+    }
+
+
+    .passport-card {
+        padding: 21px;
+    }
+
+
+    .passport-card-top {
+        flex-direction: column;
+    }
+
+
+    .score-container {
+        width: 100%;
+
+        text-align: left;
+
+        padding-left: 0;
+
+        padding-top: 18px;
+
+        border-left: none;
+
+        border-top:
+            1px solid #e4e9ef;
+    }
+
+
+    .passport-status-row {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .target-card {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .target-status {
+        justify-self: start;
+    }
+
+
+    .target-gap {
+        justify-self: start;
+
+        text-align: left;
+    }
+
+
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+
+    .nav-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .top-header {
+        height: 58px;
+    }
+
+
+    .header-inner {
+        padding:
+            0 15px;
+    }
+
+
+    .brand-icon {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 10px;
+    }
+
+
+    .brand-text h1 {
+        font-size: 13px;
+    }
+
+
+    .brand-text p {
+        font-size: 9px;
+    }
+
+
+    .logout-button {
+        padding:
+            7px 11px;
+
+        font-size: 10px;
+    }
+
+
+    .page-heading h2 {
+        font-size: 24px;
+    }
+
+
+    .category-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .score-container strong {
+        font-size: 37px;
+    }
+
+
+    .passport-info h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .page-container {
+        padding:
+            20px 13px 40px;
+    }
+
+
+    .page-heading h2 {
+        font-size: 22px;
+    }
+
+
+    .passport-card {
+        padding: 17px;
+    }
+
+
+    .summary-card {
+        padding: 18px;
+    }
+
+
+    .navigation-section {
+        padding: 18px;
+    }
+
+}

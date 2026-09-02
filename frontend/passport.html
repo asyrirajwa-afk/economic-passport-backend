@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="passport.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="passport-header">
+
+        <div class="header-inner">
+
+
+            <!-- BACK -->
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+                aria-label="Kembali"
+            >
+                ←
+            </button>
+
+
+            <!-- BRAND -->
+
+            <div class="header-brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Business Intelligence for Better Decisions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="passport-container">
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <div
+            id="loadingState"
+            class="loading-state"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat Economic Passport...
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PASSPORT CONTENT
+        ================================================== -->
+
+        <div
+            id="passportContent"
+            class="passport-content"
+            style="display: none;"
+        >
+
+
+            <!-- =================================================
+                 PAGE TITLE
+            ================================================== -->
+
+            <div class="page-heading">
+
+                <span class="section-label">
+                    ECONOMIC PASSPORT
+                </span>
+
+                <h2>
+                    Business Passport
+                </h2>
+
+                <p>
+                    Ringkasan identitas dan kondisi
+                    umum bisnis kamu.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PASSPORT CARD
+            ================================================== -->
+
+            <section class="passport-card">
+
+
+                <!-- TOP -->
+
+                <div class="passport-card-top">
+
+
+                    <div class="passport-business">
+
+                        <span class="passport-label">
+                            BUSINESS
+                        </span>
+
+                        <h3 id="businessName">
+                            -
+                        </h3>
+
+                        <p>
+                            Business ID:
+                            <span id="businessId">
+                                -
+                            </span>
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="businessStatus"
+                        class="status-badge"
+                    >
+                        -
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- DIVIDER -->
+
+                <div class="passport-divider"></div>
+
+
+
+                <!-- SCORE -->
+
+                <div class="score-area">
+
+                    <span class="passport-label">
+                        OVERALL SCORE
+                    </span>
+
+
+                    <div class="score-number">
+
+                        <strong id="businessScore">
+                            -
+                        </strong>
+
+                        <span>
+                            / 100
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="passportLevel"
+                        class="score-level"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+
+
+                <!-- INFO -->
+
+                <div class="passport-info-grid">
+
+
+                    <!-- PASSPORT ID -->
+
+                    <div class="passport-info">
+
+                        <span>
+                            Passport ID
+                        </span>
+
+                        <strong id="passportId">
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="passport-info">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="passportStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- ASSESSMENT DATE -->
+
+                    <div class="passport-info">
+
+                        <span>
+                            Assessment Date
+                        </span>
+
+                        <strong id="assessmentDate">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FOOTER -->
+
+                <div class="passport-card-footer">
+
+                    <span>
+                        Economic Passport
+                    </span>
+
+                    <span>
+                        Business Assessment
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SHORT DESCRIPTION
+            ================================================== -->
+
+            <section class="passport-description">
+
+                <div class="description-icon">
+                    i
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Tentang Passport
+                    </h3>
+
+                    <p>
+                        Economic Passport memberikan
+                        gambaran singkat mengenai kondisi
+                        bisnis berdasarkan hasil assessment.
+                        Informasi yang lebih lengkap tersedia
+                        pada halaman Passport Detail.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DETAIL ACTION
+            ================================================== -->
+
+            <section class="detail-action">
+
+                <div>
+                    <span class="section-label">
+                        MORE INFORMATION
+                    </span>
+
+                    <h2>
+                        Kelola Economic Passport
+                    </h2>
+
+                    <p>
+                        Lihat detail score passport atau gunakan
+                        fitur berbagi, verifikasi QR, dan ekspor
+                        Economic Passport.
+                    </p>
+                </div>
+
+                <div class="passport-actions">
+
+                    <button
+                        type="button"
+                        id="passportDetailButton"
+                        class="detail-button"
+                    >
+                        Lihat Passport Detail →
+                    </button>
+
+                    <button
+                        type="button"
+                        id="passportToolsButton"
+                        class="tools-button"
+                    >
+                        Passport Tools →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <div
+            id="errorState"
+            class="error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+
+            <h2>
+                Passport Tidak Dapat Dimuat
+            </h2>
+
+
+            <p id="errorMessage">
+                Data Economic Passport tidak dapat
+                diambil.
+            </p>
+
+
+            <button
+                type="button"
+                id="errorBackButton"
+                class="primary-button"
+            >
+                Kembali ke Dashboard
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="passport.js"></script>
+
+
+</body>
+
+</html>

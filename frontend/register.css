@@ -1,0 +1,384 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9fc,
+            #e9eef7
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #1f2937;
+}
+
+
+/* ==============================
+   REGISTER CONTAINER
+   ============================== */
+
+.register-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 20px;
+}
+
+
+/* ==============================
+   REGISTER CARD
+   ============================== */
+
+.register-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   BRAND
+   ============================== */
+
+.brand {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.brand-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius: 16px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+
+.brand h1 {
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+
+    color: #1f2937;
+}
+
+
+.brand p {
+
+    font-size: 14px;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   FORM
+   ============================== */
+
+.form-group {
+
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.form-group input:focus {
+
+    border-color: #1f4e79;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 78, 121, 0.1);
+}
+
+
+/* ==============================
+   PASSWORD WRAPPER
+   ============================== */
+
+.password-wrapper {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+.password-wrapper input {
+
+    width: 100%;
+
+    padding:
+        13px 48px 13px 14px;
+}
+
+
+/* ==============================
+   PASSWORD TOGGLE
+   ============================== */
+
+.toggle-password {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 10px;
+
+    transform:
+        translateY(-50%);
+
+    width: 34px;
+
+    height: 34px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+
+.toggle-password:hover {
+
+    background: #f3f4f6;
+
+    color: #1f4e79;
+}
+
+
+.toggle-password:active {
+
+    opacity: 0.7;
+}
+
+
+.toggle-password svg {
+
+    width: 20px;
+
+    height: 20px;
+}
+
+
+/* ==============================
+   REGISTER BUTTON
+   ============================== */
+
+.register-button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+
+.register-button:hover {
+
+    background: #173a5c;
+}
+
+
+.register-button:active {
+
+    transform: scale(0.98);
+}
+
+
+.register-button:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   MESSAGE
+   ============================== */
+
+.message {
+
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   LOGIN LINK
+   ============================== */
+
+.login-link {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.login-link a {
+
+    color: #1f4e79;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.login-link a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 480px) {
+
+    .register-container {
+
+        padding: 15px;
+    }
+
+
+    .register-card {
+
+        padding:
+            30px 22px;
+    }
+
+
+    .brand h1 {
+
+        font-size: 22px;
+    }
+
+}

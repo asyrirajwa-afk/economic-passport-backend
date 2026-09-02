@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Score Breakdown - Economic Passport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="score-breakdown.css">
+</head>
+<body>
+<header class="header"><div class="header-inner">
+  <div class="brand"><div class="brand-icon">EP</div><div><h1>Economic Passport</h1><p>Business Intelligence for Better Decisions</p></div></div>
+  <button id="logoutButton" class="logout">Logout</button>
+</div></header>
+<main class="container">
+  <button id="backButton" class="back">← Kembali ke Passport</button>
+  <section id="loadingState" class="state"><div class="spinner"></div><p>Memuat score breakdown...</p></section>
+  <section id="errorState" class="state hidden"><div class="error-icon">!</div><h2>Data tidak dapat dimuat</h2><p id="errorMessage"></p><div class="actions"><button id="retryButton" class="primary">Coba Lagi</button><button id="errorBackButton" class="secondary">Kembali</button></div></section>
+  <div id="content" class="hidden">
+    <section class="title"><div class="eyebrow">SCORE BREAKDOWN</div><h2 id="businessName">Economic Passport</h2><p>Lihat bagaimana setiap area berkontribusi terhadap kondisi bisnis.</p></section>
+    <section class="summary">
+      <article class="overall card"><div><span class="label">Overall Score</span><div class="score"><b id="overallScore">0</b><small>/ 100</small></div><span id="overallLevel" class="badge">-</span></div><div id="scoreRing" class="ring"><span id="ringScore">0</span></div></article>
+      <article class="card stat"><span class="label">Trend</span><b id="trendDirection">-</b><p id="trendDetail">-</p></article>
+      <article class="card stat"><span class="label">Target Score</span><b id="targetScore">80</b><p id="targetDetail">-</p></article>
+      <article class="card stat"><span class="label">Assessment</span><b id="assessmentCount">0</b><p id="assessmentDate">-</p></article>
+    </section>
+    <section class="card section"><div class="section-head"><div><div class="eyebrow">CATEGORY PERFORMANCE</div><h3>Performa Setiap Area</h3></div><span class="average">Rata-rata area: <b id="categoryAverage">0</b></span></div><div id="categoryList" class="categories"></div></section>
+    <section class="highlights">
+      <article class="card highlight strongest"><span>Area Terkuat</span><h3 id="strongestCategory">-</h3><b id="strongestScore">0</b><p>Score tertinggi dari seluruh area bisnis.</p></article>
+      <article class="card highlight weakest"><span>Area Terlemah</span><h3 id="weakestCategory">-</h3><b id="weakestScore">0</b><p>Area dengan score terendah dan perlu diperhatikan.</p></article>
+      <article class="card highlight action"><span>Action Required</span><h3 id="actionRequired">0 Area</h3><p>Area dengan score di bawah target 80.</p></article>
+    </section>
+    <section class="card section"><div class="eyebrow">PASSPORT INFORMATION</div><h3>Informasi Passport</h3><div class="info"><div><span>Passport ID</span><b id="passportId">-</b></div><div><span>Status Passport</span><b id="passportStatus">-</b></div><div><span>Assessment Terakhir</span><b id="latestAssessment">-</b></div><div><span>Assessment Pertama</span><b id="firstAssessment">-</b></div></div></section>
+  </div>
+</main>
+
+<div class="action-row">
+    <button
+        type="button"
+        class="secondary-button"
+        id="comparisonButton"
+    >
+        Bandingkan Score
+    </button>
+</div>
+<script src="score-breakdown.js"></script>
+</body>
+</html>

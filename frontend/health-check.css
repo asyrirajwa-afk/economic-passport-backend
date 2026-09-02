@@ -1,0 +1,1119 @@
+/* =========================================================
+   ECONOMIC PASSPORT
+   BUSINESS HEALTH CHECK
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fb;
+
+    color: #0f172a;
+
+    line-height: 1.5;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.page-header {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e2e8f0;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.header-inner {
+    width:
+        min(
+            1100px,
+            calc(100% - 40px)
+        );
+
+    height: 64px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.back-button {
+    width: 38px;
+
+    height: 38px;
+
+    border:
+        1px solid #d8e1ec;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    color: #174d7a;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+
+.back-button:hover {
+    background: #f1f6fa;
+
+    border-color:
+        #174d7a;
+}
+
+
+.header-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-right: auto;
+}
+
+
+.brand-icon {
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 8px;
+
+    background: #174d7a;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.header-brand h1 {
+    font-size: 14px;
+
+    color: #0f172a;
+
+    line-height: 1.2;
+}
+
+
+.header-brand p {
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+
+.logout-button {
+    padding:
+        8px 15px;
+
+    border:
+        1px solid #d8e1ec;
+
+    background: #ffffff;
+
+    border-radius: 7px;
+
+    color: #334155;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+.logout-button:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.health-container {
+    width:
+        min(
+            1000px,
+            calc(100% - 40px)
+        );
+
+    margin: 0 auto;
+
+    padding:
+        36px 0 60px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.page-intro {
+    margin-bottom: 28px;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    color: #174d7a;
+
+    margin-bottom: 7px;
+}
+
+
+.page-intro h2 {
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    margin-bottom: 7px;
+}
+
+
+.page-intro p {
+    font-size: 11px;
+
+    color: #64748b;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   BUSINESS CARD
+========================================================= */
+
+.business-card {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background: #ffffff;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+
+    margin-bottom: 34px;
+}
+
+
+.business-card > div {
+    padding:
+        15px 17px;
+
+    border-right:
+        1px solid #e2e8f0;
+}
+
+
+.business-card > div:last-child {
+    border-right: none;
+}
+
+
+.business-card span {
+    display: block;
+
+    font-size: 8px;
+
+    color: #64748b;
+
+    margin-bottom: 5px;
+}
+
+
+.business-card strong {
+    font-size: 12px;
+
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    margin-bottom: 14px;
+}
+
+
+.section-title h2 {
+    font-size: 17px;
+
+    line-height: 1.3;
+
+    margin-bottom: 4px;
+}
+
+
+.section-title p {
+    font-size: 10px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   OVERALL
+========================================================= */
+
+.overall-section {
+    margin-bottom: 32px;
+}
+
+
+.overall-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 11px;
+
+    padding: 22px;
+}
+
+
+.overall-content {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.overall-info {
+    flex: 1;
+}
+
+
+.overall-label {
+    display: block;
+
+    font-size: 9px;
+
+    color: #64748b;
+
+    margin-bottom: 5px;
+}
+
+
+.overall-status {
+    display: inline-flex;
+
+    padding:
+        5px 10px;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+
+.overall-status.healthy {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+.overall-status.monitor {
+    background: #fef3c7;
+
+    color: #a16207;
+}
+
+
+.overall-status.attention {
+    background: #ffedd5;
+
+    color: #c2410c;
+}
+
+
+.overall-status.critical {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+.overall-message {
+    font-size: 11px;
+
+    color: #475569;
+
+    line-height: 1.6;
+}
+
+
+.overall-score {
+    min-width: 150px;
+
+    text-align: right;
+}
+
+
+.overall-score span {
+    display: block;
+
+    font-size: 9px;
+
+    color: #64748b;
+
+    margin-bottom: 3px;
+}
+
+
+.overall-score strong {
+    font-size: 34px;
+
+    color: #174d7a;
+
+    line-height: 1;
+}
+
+
+.overall-score small {
+    font-size: 10px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   STATUS GRID
+========================================================= */
+
+.status-section {
+    margin-bottom: 34px;
+}
+
+
+.status-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.status-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 9px;
+
+    padding: 15px;
+
+    min-height: 78px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+.status-card span {
+    font-size: 8px;
+
+    color: #64748b;
+}
+
+
+.status-card strong {
+    font-size: 21px;
+
+    line-height: 1;
+
+    color: #0f172a;
+}
+
+
+.status-card.healthy {
+    border-top:
+        2px solid #22c55e;
+}
+
+
+.status-card.monitor {
+    border-top:
+        2px solid #f59e0b;
+}
+
+
+.status-card.attention {
+    border-top:
+        2px solid #f97316;
+}
+
+
+.status-card.critical {
+    border-top:
+        2px solid #ef4444;
+}
+
+
+/* =========================================================
+   HEALTH AREAS
+========================================================= */
+
+.areas-section {
+    margin-bottom: 34px;
+}
+
+
+.health-areas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.health-area-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    position: relative;
+}
+
+
+.health-area-card.healthy {
+    border-left:
+        4px solid #22c55e;
+}
+
+
+.health-area-card.monitor {
+    border-left:
+        4px solid #f59e0b;
+}
+
+
+.health-area-card.attention {
+    border-left:
+        4px solid #f97316;
+}
+
+
+.health-area-card.critical {
+    border-left:
+        4px solid #ef4444;
+}
+
+
+.health-area-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+}
+
+
+.health-area-header h3 {
+    font-size: 14px;
+
+    color: #0f172a;
+
+    margin-bottom: 3px;
+}
+
+
+.health-area-header p {
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+
+.health-status {
+    flex-shrink: 0;
+
+    padding:
+        4px 8px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+
+.health-status.healthy {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+.health-status.monitor {
+    background: #fef3c7;
+
+    color: #a16207;
+}
+
+
+.health-status.attention {
+    background: #ffedd5;
+
+    color: #c2410c;
+}
+
+
+.health-status.critical {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   SCORE BAR
+========================================================= */
+
+.score-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.score-bar {
+    flex: 1;
+
+    height: 7px;
+
+    background: #e8edf2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.score-fill {
+    height: 100%;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.5s ease;
+}
+
+
+.score-fill.healthy {
+    background: #22c55e;
+}
+
+
+.score-fill.monitor {
+    background: #f59e0b;
+}
+
+
+.score-fill.attention {
+    background: #f97316;
+}
+
+
+.score-fill.critical {
+    background: #ef4444;
+}
+
+
+.score-value {
+    min-width: 48px;
+
+    text-align: right;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+}
+
+
+.health-area-message {
+    font-size: 10px;
+
+    color: #475569;
+
+    line-height: 1.55;
+
+    margin-bottom: 9px;
+}
+
+
+.health-area-severity {
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+
+.health-area-severity strong {
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   RISK
+========================================================= */
+
+.risk-section {
+    margin-bottom: 35px;
+}
+
+
+.risk-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dce4ed;
+
+    border-left:
+        4px solid #f97316;
+
+    border-radius: 10px;
+
+    padding: 19px;
+}
+
+
+.risk-content {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.risk-info {
+    flex: 1;
+}
+
+
+.risk-label {
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    color: #c2410c;
+
+    margin-bottom: 5px;
+}
+
+
+.risk-info h3 {
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+
+.risk-info p {
+    font-size: 10px;
+
+    color: #64748b;
+}
+
+
+.risk-score {
+    text-align: right;
+
+    min-width: 100px;
+}
+
+
+.risk-score span {
+    display: block;
+
+    font-size: 8px;
+
+    color: #64748b;
+
+    margin-bottom: 3px;
+}
+
+
+.risk-score strong {
+    font-size: 25px;
+
+    color: #c2410c;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-state {
+    min-height: 110px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.loading-state p {
+    font-size: 9px;
+
+    color: #94a3b8;
+
+    margin-top: 10px;
+}
+
+
+.loading-spinner {
+    width: 25px;
+
+    height: 25px;
+
+    border:
+        3px solid #e2e8f0;
+
+    border-top-color:
+        #174d7a;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-state {
+    background: #ffffff;
+
+    border:
+        1px solid #fecaca;
+
+    border-radius: 10px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+
+.error-icon {
+    width: 36px;
+
+    height: 36px;
+
+    margin:
+        0 auto 12px;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 17px;
+}
+
+
+.error-state h2 {
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+
+.error-state p {
+    font-size: 10px;
+
+    color: #64748b;
+
+    margin-bottom: 15px;
+}
+
+
+.primary-button {
+    padding:
+        9px 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #174d7a;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+.primary-button:hover {
+    background: #123e61;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+    max-width: 750px
+) {
+
+    .health-container {
+        width:
+            calc(100% - 28px);
+
+        padding-top: 27px;
+    }
+
+
+    .business-card {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .business-card > div:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .business-card > div:nth-child(-n + 2) {
+        border-bottom:
+            1px solid #e2e8f0;
+    }
+
+
+    .status-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .health-areas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (
+    max-width: 500px
+) {
+
+    .header-inner {
+        width:
+            calc(100% - 20px);
+    }
+
+
+    .header-brand h1 {
+        font-size: 12px;
+    }
+
+
+    .header-brand p {
+        font-size: 8px;
+    }
+
+
+    .logout-button {
+        padding:
+            7px 10px;
+    }
+
+
+    .page-intro h2 {
+        font-size: 22px;
+    }
+
+
+    .business-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .business-card > div,
+    .business-card > div:nth-child(2) {
+        border-right: none;
+
+        border-bottom:
+            1px solid #e2e8f0;
+    }
+
+
+    .business-card > div:last-child {
+        border-bottom: none;
+    }
+
+
+    .overall-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .overall-score {
+        text-align: left;
+    }
+
+
+    .risk-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .risk-score {
+        text-align: left;
+    }
+
+}

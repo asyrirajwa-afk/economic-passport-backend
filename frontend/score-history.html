@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Score Breakdown
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="score-breakdown.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
+
+    <main class="page-container">
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <div
+            id="loadingState"
+            class="loading-state"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat Score Breakdown...
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <section
+            id="errorState"
+            class="error-state hidden"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h2>
+                Data belum tersedia
+            </h2>
+
+            <p id="errorMessage">
+                Tidak dapat mengambil data Score Breakdown.
+            </p>
+
+            <button
+                type="button"
+                id="retryButton"
+                class="primary-button"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div
+            id="content"
+            class="content hidden"
+        >
+
+
+            <!-- =============================================
+                 BUSINESS HEADER
+            ============================================== -->
+
+            <section class="business-header">
+
+                <div>
+
+                    <span class="section-label">
+                        SCORE BREAKDOWN
+                    </span>
+
+                    <h1 id="businessName">
+                        -
+                    </h1>
+
+                    <p>
+                        Business ID:
+                        <strong id="businessId">
+                            -
+                        </strong>
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 OVERALL SCORE
+            ============================================== -->
+
+            <section class="overall-section">
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        OVERALL PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Business Score
+                    </h2>
+
+                    <p>
+                        Gambaran keseluruhan kondisi bisnis
+                        berdasarkan assessment terbaru.
+                    </p>
+
+                </div>
+
+
+
+                <div class="overall-card">
+
+
+                    <!-- SCORE -->
+
+                    <div class="overall-score-area">
+
+                        <span class="score-caption">
+                            Overall Score
+                        </span>
+
+                        <div class="overall-score-row">
+
+                            <strong id="overallScore">
+                                -
+                            </strong>
+
+                            <span>
+                                / 100
+                            </span>
+
+                        </div>
+
+                        <span
+                            id="overallLabel"
+                            class="score-status"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- TARGET -->
+
+                    <div class="overall-info">
+
+                        <div class="info-item">
+
+                            <span>
+                                Target Score
+                            </span>
+
+                            <strong id="targetScore">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>
+                                Target Status
+                            </span>
+
+                            <strong id="targetStatus">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>
+                                Score Gap
+                            </span>
+
+                            <strong id="scoreGap">
+                                -
+                            </strong>
+
+                            <small id="gapLabel">
+                                -
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 SCORE COMPARISON WITH TARGET
+            ============================================== -->
+
+            <section class="comparison-section">
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        SCORE POSITION
+                    </span>
+
+                    <h2>
+                        Posisi Score
+                    </h2>
+
+                    <p id="comparisonDescription">
+                        Membandingkan score bisnis
+                        dengan target minimum.
+                    </p>
+
+                </div>
+
+
+
+                <div class="comparison-card">
+
+
+                    <!-- CURRENT SCORE -->
+
+                    <div class="comparison-row">
+
+                        <div class="comparison-row-header">
+
+                            <span>
+                                Business Score
+                            </span>
+
+                            <strong id="businessScoreText">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <div class="score-track">
+
+                            <div
+                                id="businessScoreBar"
+                                class="score-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TARGET SCORE -->
+
+                    <div class="comparison-row">
+
+                        <div class="comparison-row-header">
+
+                            <span>
+                                Target Score
+                            </span>
+
+                            <strong id="targetScoreText">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <div class="score-track">
+
+                            <div
+                                id="targetScoreBar"
+                                class="score-fill target-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="comparison-status">
+
+                        <strong id="comparisonStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 CATEGORY BREAKDOWN
+            ============================================== -->
+
+            <section
+                id="categorySection"
+                class="category-section"
+            >
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        CATEGORY PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Performa Setiap Area
+                    </h2>
+
+                    <p>
+                        Detail score berdasarkan empat
+                        area utama Economic Passport.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    id="categoryList"
+                    class="category-list"
+                >
+
+                    <!--
+                        Category akan dibuat oleh JavaScript
+                    -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 NAVIGATION TO SCORE COMPARISON
+            ============================================== -->
+
+            <section class="next-section">
+
+                <div>
+
+                    <span class="section-label">
+                        NEXT ANALYSIS
+                    </span>
+
+                    <h2>
+                        Bandingkan dengan Assessment Sebelumnya
+                    </h2>
+
+                    <p>
+                        Lihat apakah score bisnis mengalami
+                        peningkatan atau penurunan dibandingkan
+                        assessment sebelumnya.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="comparisonButton"
+                    class="primary-button"
+                >
+                    Bandingkan Score →
+                </button>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 BACK / NAVIGATION
+            ============================================== -->
+
+            <div class="bottom-actions">
+
+                <button
+                    type="button"
+                    id="backButton"
+                    class="secondary-button"
+                >
+                    ← Kembali
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="score-breakdown.js"></script>
+
+</body>
+
+</html>

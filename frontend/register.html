@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Economic Passport - Register</title>
+
+    <link
+        rel="stylesheet"
+        href="register.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="register-container">
+
+        <section class="register-card">
+
+            <!-- ==============================
+                 BRAND
+                 ============================== -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <h1>
+                    Economic Passport
+                </h1>
+
+                <p>
+                    Business Intelligence for Better Decisions
+                </p>
+
+            </div>
+
+
+            <!-- ==============================
+                 FULL NAME
+                 ============================== -->
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Nama Lengkap
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="full_name"
+                    placeholder="Masukkan nama lengkap"
+                    autocomplete="name"
+                >
+
+            </div>
+
+
+            <!-- ==============================
+                 EMAIL
+                 ============================== -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Masukkan email"
+                    autocomplete="email"
+                >
+
+            </div>
+
+
+            <!-- ==============================
+                 PHONE
+                 ============================== -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Nomor Telepon
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Masukkan nomor telepon"
+                    autocomplete="tel"
+                >
+
+            </div>
+
+
+            <!-- ==============================
+                 PASSWORD
+                 ============================== -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Masukkan password"
+                        autocomplete="new-password"
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="toggle-password"
+                        aria-label="Tampilkan password"
+                    >
+
+                        <!-- MATA DICORET -->
+                        <svg
+                            id="eyeOffIcon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path d="M3 3l18 18"></path>
+
+                            <path
+                                d="M10.58 10.58a2 2 0 0 0 2.83 2.83"
+                            ></path>
+
+                            <path
+                                d="M9.88 4.24A9.77 9.77 0 0 1 12 4c5 0 8.5 5 8.5 5a13.16 13.16 0 0 1-2.11 2.73"
+                            ></path>
+
+                            <path
+                                d="M6.61 6.61C4.62 7.84 3.5 9 3.5 9S7 14 12 14c1.1 0 2.13-.2 3.06-.53"
+                            ></path>
+
+                        </svg>
+
+
+                        <!-- MATA BIASA -->
+
+                        <svg
+                            id="eyeIcon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            style="display: none;"
+                        >
+
+                            <path
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            ></path>
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3"
+                            ></circle>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 CONFIRM PASSWORD
+                 ============================== -->
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Konfirmasi Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirm_password"
+                        placeholder="Ulangi password"
+                        autocomplete="new-password"
+                    >
+
+                    <button
+                        type="button"
+                        id="toggleConfirmPassword"
+                        class="toggle-password"
+                        aria-label="Tampilkan password"
+                    >
+
+                        <!-- MATA DICORET -->
+
+                        <svg
+                            id="confirmEyeOffIcon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path d="M3 3l18 18"></path>
+
+                            <path
+                                d="M10.58 10.58a2 2 0 0 0 2.83 2.83"
+                            ></path>
+
+                            <path
+                                d="M9.88 4.24A9.77 9.77 0 0 1 12 4c5 0 8.5 5 8.5 5a13.16 13.16 0 0 1-2.11 2.73"
+                            ></path>
+
+                            <path
+                                d="M6.61 6.61C4.62 7.84 3.5 9 3.5 9S7 14 12 14c1.1 0 2.13-.2 3.06-.53"
+                            ></path>
+
+                        </svg>
+
+
+                        <!-- MATA BIASA -->
+
+                        <svg
+                            id="confirmEyeIcon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            style="display: none;"
+                        >
+
+                            <path
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"
+                            ></path>
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3"
+                            ></circle>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 REGISTER BUTTON
+                 ============================== -->
+
+            <button
+                type="button"
+                id="registerButton"
+                class="register-button"
+            >
+                Daftar
+            </button>
+
+
+            <!-- ==============================
+                 MESSAGE
+                 ============================== -->
+
+            <p
+                id="message"
+                class="message"
+            ></p>
+
+
+            <!-- ==============================
+                 LOGIN LINK
+                 ============================== -->
+
+            <div class="login-link">
+
+                <span>
+                    Sudah punya akun?
+                </span>
+
+                <a href="index.html">
+                    Login sekarang
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>

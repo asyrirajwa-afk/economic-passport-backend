@@ -1,0 +1,1164 @@
+/* =====================================================
+   STATUS SUMMARY
+   ECONOMIC PASSPORT
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #182338;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e3e7ee;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.header-inner {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.brand-icon {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #123f68;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.brand-text h1 {
+    font-size: 15px;
+
+    font-weight: 750;
+
+    color: #14243a;
+}
+
+
+.brand-text p {
+    margin-top: 2px;
+
+    color: #7b8492;
+
+    font-size: 10px;
+}
+
+
+.logout-button {
+    padding:
+        8px 15px;
+
+    border:
+        1px solid #d8dee7;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.logout-button:hover {
+    background: #f4f6f9;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.page-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+        32px 24px 60px;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+    border: none;
+
+    background: transparent;
+
+    color: #1d527e;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    margin-bottom: 22px;
+}
+
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+
+.eyebrow {
+    display: block;
+
+    color: #236087;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 7px;
+}
+
+
+.page-heading h2 {
+    color: #14243a;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+}
+
+
+.page-heading p {
+    color: #718096;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: 7px;
+}
+
+
+.business-name {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding:
+        7px 11px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 7px;
+
+    color: #334155;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+/* =====================================================
+   STATUS CARD
+===================================================== */
+
+.status-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 13px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 18px rgba(
+            30,
+            45,
+            65,
+            0.04
+        );
+
+    margin-bottom: 30px;
+}
+
+
+.status-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.status-label {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.07em;
+}
+
+
+.level {
+    margin-top: 7px;
+
+    color: #14243a;
+
+    font-size: 25px;
+
+    font-weight: 750;
+}
+
+
+.status-description {
+    margin-top: 6px;
+
+    color: #718096;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    max-width: 600px;
+}
+
+
+/* =====================================================
+   SCORE CIRCLE
+===================================================== */
+
+.score-circle {
+    width: 90px;
+
+    height: 90px;
+
+    min-width: 90px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f0f4fa;
+
+    border:
+        7px solid #dce6f1;
+}
+
+
+.score-circle strong {
+    color: #145486;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    font-weight: 750;
+}
+
+
+.score-circle span {
+    margin-top: 4px;
+
+    color: #7b8492;
+
+    font-size: 8px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   PASSPORT INFORMATION
+===================================================== */
+
+.passport-info {
+    margin-top: 22px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid #edf0f4;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 10px;
+}
+
+
+.info-item {
+    background: #f7f9fc;
+
+    border-radius: 8px;
+
+    padding: 12px;
+}
+
+
+.info-item span {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+
+    margin-bottom: 5px;
+}
+
+
+.info-item strong {
+    color: #26364c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   SECTION BLOCK
+===================================================== */
+
+.section-block {
+    margin-bottom: 30px;
+}
+
+
+.section-heading {
+    margin-bottom: 13px;
+}
+
+
+.section-heading h3 {
+    color: #17263b;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+.section-heading p {
+    margin-top: 4px;
+
+    color: #7b8492;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   INFO GRID
+===================================================== */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 12px;
+}
+
+
+.info-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 11px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+}
+
+
+.card-label {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+.card-value {
+    color: #1c2c42;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   TREND CARD
+===================================================== */
+
+.trend-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr
+        1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+}
+
+
+.trend-item span,
+.trend-change span {
+    display: block;
+
+    color: #7b8492;
+
+    font-size: 9px;
+
+    margin-bottom: 6px;
+}
+
+
+.trend-item strong {
+    color: #1a2d44;
+
+    font-size: 22px;
+
+    font-weight: 750;
+}
+
+
+.trend-divider {
+    color: #9aa4b2;
+
+    font-size: 18px;
+}
+
+
+.trend-change {
+    padding-left: 18px;
+
+    border-left:
+        1px solid #e7eaf0;
+}
+
+
+.trend-change strong {
+    display: block;
+
+    color: #258152;
+
+    font-size: 18px;
+
+    font-weight: 750;
+}
+
+
+.trend-change small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #6f7b89;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PERFORMANCE
+===================================================== */
+
+.performance-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 13px;
+}
+
+
+.performance-card {
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 4px 14px rgba(
+            30,
+            45,
+            65,
+            0.03
+        );
+}
+
+
+.performance-category {
+    display: block;
+
+    color: #1a2d44;
+
+    font-size: 20px;
+
+    font-weight: 750;
+
+    margin-top: 3px;
+}
+
+
+.performance-score {
+    margin-top: 10px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 7px;
+}
+
+
+.performance-score span {
+    color: #7b8492;
+
+    font-size: 10px;
+}
+
+
+.performance-score strong {
+    color: #145486;
+
+    font-size: 20px;
+
+    font-weight: 750;
+}
+
+
+.performance-number {
+    display: block;
+
+    color: #1a2d44;
+
+    font-size: 26px;
+
+    margin-top: 3px;
+}
+
+
+.performance-card p {
+    color: #7b8492;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    margin-top: 9px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation-section {
+    background: #122238;
+
+    border-radius: 13px;
+
+    padding: 22px;
+
+    margin-top: 35px;
+}
+
+
+.navigation-section .eyebrow {
+    color: #9fc1dc;
+}
+
+
+.navigation-header h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+.navigation-header p {
+    margin-top: 5px;
+
+    color: #b7c4d2;
+
+    font-size: 11px;
+}
+
+
+.navigation-buttons {
+    margin-top: 17px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.nav-button {
+    border:
+        1px solid #cfd8e3;
+
+    background: #ffffff;
+
+    color: #29425b;
+
+    border-radius: 7px;
+
+    padding:
+        9px 13px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.nav-button:hover {
+    background: #eef3f7;
+
+    transform: translateY(-1px);
+}
+
+
+.nav-button.primary {
+    background: #2c6897;
+
+    border-color: #2c6897;
+
+    color: #ffffff;
+}
+
+
+.nav-button.primary:hover {
+    background: #24577f;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-state {
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #7b8492;
+
+    font-size: 12px;
+}
+
+
+.loading-spinner {
+    width: 32px;
+
+    height: 32px;
+
+    border:
+        3px solid #e1e6ed;
+
+    border-top-color: #2c6897;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+    margin-bottom: 12px;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-state {
+    min-height: 55vh;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dfe4eb;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.error-icon {
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    background: #fff0ef;
+
+    color: #c7463d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+
+.error-state h3 {
+    color: #26364c;
+
+    font-size: 17px;
+}
+
+
+.error-state p {
+    margin-top: 5px;
+
+    color: #7b8492;
+
+    font-size: 11px;
+
+    max-width: 450px;
+}
+
+
+.retry-button {
+    margin-top: 15px;
+
+    border: none;
+
+    background: #1f5c8c;
+
+    color: #ffffff;
+
+    padding:
+        9px 14px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.retry-button:hover {
+    background: #174b73;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .page-container {
+        padding:
+            26px 18px 45px;
+    }
+
+
+    .passport-info {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .info-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .trend-card {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .trend-divider {
+        display: none;
+    }
+
+
+    .trend-change {
+        padding-left: 0;
+
+        border-left: none;
+
+        padding-top: 10px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-header {
+        height: 58px;
+    }
+
+
+    .header-inner {
+        padding:
+            0 15px;
+    }
+
+
+    .brand-icon {
+        width: 34px;
+
+        height: 34px;
+    }
+
+
+    .brand-text h1 {
+        font-size: 13px;
+    }
+
+
+    .brand-text p {
+        font-size: 9px;
+    }
+
+
+    .page-heading h2 {
+        font-size: 24px;
+    }
+
+
+    .status-card {
+        padding: 19px;
+    }
+
+
+    .status-card-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .score-circle {
+        width: 82px;
+
+        height: 82px;
+
+        min-width: 82px;
+    }
+
+
+    .score-circle strong {
+        font-size: 21px;
+    }
+
+
+    .passport-info {
+        grid-template-columns: 1fr;
+    }
+
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .performance-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .trend-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .trend-change {
+        padding-top: 12px;
+
+        border-top:
+            1px solid #e7eaf0;
+    }
+
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+
+    .nav-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .page-container {
+        padding:
+            22px 14px 40px;
+    }
+
+
+    .page-heading h2 {
+        font-size: 22px;
+    }
+
+
+    .navigation-section {
+        padding: 18px;
+    }
+
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Economic Passport - Tambah Bisnis</title>
+
+    <link
+        rel="stylesheet"
+        href="add-business.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="page-container">
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <h1>
+                    Tambah Bisnis
+                </h1>
+
+                <p>
+                    Masukkan informasi dasar bisnis kamu.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- FORM -->
+
+        <section class="form-card">
+
+            <form id="businessForm">
+
+                <!-- NAMA BISNIS -->
+
+                <div class="form-group">
+
+                    <label for="businessName">
+                        Nama Bisnis
+                    </label>
+
+                    <input
+                        type="text"
+                        id="businessName"
+                        placeholder="Contoh: Asyri Crochet"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- KATEGORI BISNIS -->
+
+                <div class="form-group">
+
+                    <label for="businessCategory">
+                        Kategori Bisnis
+                    </label>
+
+                    <select
+                        id="businessCategory"
+                        required
+                    >
+
+                        <option
+                            value=""
+                            disabled
+                            selected
+                        >
+                            Pilih kategori bisnis
+                        </option>
+
+                        <option value="Fashion">
+                            Fashion
+                        </option>
+
+                        <option value="Food and Beverage">
+                            Food & Beverage
+                        </option>
+
+                        <option value="Craft">
+                            Craft / Kerajinan
+                        </option>
+
+                        <option value="Beauty">
+                            Beauty
+                        </option>
+
+                        <option value="Technology">
+                            Technology
+                        </option>
+
+                        <option value="Services">
+                            Jasa
+                        </option>
+
+                        <option value="Other">
+                            Lainnya
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SKALA BISNIS -->
+
+                <div class="form-group">
+
+                    <label for="businessSize">
+                        Skala Bisnis
+                    </label>
+
+                    <select
+                        id="businessSize"
+                        required
+                    >
+
+                        <option
+                            value=""
+                            disabled
+                            selected
+                        >
+                            Pilih skala bisnis
+                        </option>
+
+                        <option value="MICRO">
+                            Mikro
+                        </option>
+
+                        <option value="SMALL">
+                            Kecil
+                        </option>
+
+                        <option value="MEDIUM">
+                            Menengah
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- KATEGORI PRODUK -->
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Kategori Produk
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productCategory"
+                        placeholder="Contoh: Handmade Crochet"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MARKETPLACE -->
+
+                <div class="form-group">
+
+                    <label for="primaryMarketplace">
+                        Marketplace Utama
+                    </label>
+
+                    <select
+                        id="primaryMarketplace"
+                        required
+                    >
+
+                        <option
+                            value=""
+                            disabled
+                            selected
+                        >
+                            Pilih marketplace
+                        </option>
+
+                        <option value="Shopee">
+                            Shopee
+                        </option>
+
+                        <option value="Tokopedia">
+                            Tokopedia
+                        </option>
+
+                        <option value="TikTok Shop">
+                            TikTok Shop
+                        </option>
+
+                        <option value="Lazada">
+                            Lazada
+                        </option>
+
+                        <option value="Blibli">
+                            Blibli
+                        </option>
+
+                        <option value="Instagram">
+                            Instagram
+                        </option>
+
+                        <option value="Other">
+                            Lainnya
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- KOTA -->
+
+                <div class="form-group">
+
+                    <label for="sellerCity">
+                        Kota Domisili Bisnis
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sellerCity"
+                        placeholder="Contoh: Bandung"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <p
+                    id="errorMessage"
+                    class="error-message"
+                ></p>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="save-button"
+                >
+                    Simpan Bisnis
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="add-business.js"></script>
+
+</body>
+
+</html>

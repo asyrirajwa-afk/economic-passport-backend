@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Passport Tools - Economic Passport</title>
+
+    <link
+        rel="stylesheet"
+        
+        href="passport-tools.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         HEADER
+         ============================== -->
+
+    <header class="header">
+
+        <div class="header-inner">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Business Intelligence for Better Decisions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+                type="button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN
+         ============================== -->
+
+    <main class="container">
+
+
+        <!-- BACK -->
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+        >
+            ← Kembali
+        </button>
+
+
+        <!-- ==============================
+             LOADING
+             ============================== -->
+
+        <section
+            id="loadingState"
+            class="state"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Memuat Passport Tools...
+            </p>
+
+        </section>
+
+
+        <!-- ==============================
+             ERROR
+             ============================== -->
+
+        <section
+            id="errorState"
+            class="state hidden"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h2>
+                Data tidak dapat dimuat
+            </h2>
+
+            <p id="errorMessage">
+                Terjadi kesalahan.
+            </p>
+
+            <div class="error-actions">
+
+                <button
+                    id="retryButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    Coba Lagi
+                </button>
+
+                <button
+                    id="errorBackButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Kembali
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             CONTENT
+             ============================== -->
+
+        <div
+            id="content"
+            class="hidden"
+        >
+
+
+            <!-- ==============================
+                 PAGE TITLE
+                 ============================== -->
+
+            <section class="page-title">
+
+                <div class="eyebrow">
+                    PASSPORT TOOLS
+                </div>
+
+                <h2 id="businessName">
+                    Economic Passport
+                </h2>
+
+                <p>
+                    Bagikan, verifikasi, atau ekspor
+                    Economic Passport bisnis Anda.
+                </p>
+
+            </section>
+
+
+            <!-- ==============================
+                 PASSPORT SUMMARY
+                 ============================== -->
+
+            <section class="passport-summary card">
+
+                <div>
+
+                    <span class="label">
+                        Passport ID
+                    </span>
+
+                    <strong id="passportId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span class="label">
+                        Overall Score
+                    </span>
+
+                    <strong id="overallScore">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span class="label">
+                        Status
+                    </span>
+
+                    <span
+                        id="passportStatus"
+                        class="status-badge"
+                    >
+                        -
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 TOOLS
+                 ============================== -->
+
+            <section class="tools-grid">
+
+
+                <!-- ==============================
+                     SHARE PASSPORT
+                     ============================== -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon share-icon">
+                        ↗
+                    </div>
+
+                    <div class="tool-content">
+
+                        <div class="eyebrow">
+                            SHARE PASSPORT
+                        </div>
+
+                        <h3>
+                            Bagikan Passport
+                        </h3>
+
+                        <p>
+                            Buat link publik agar
+                            Economic Passport dapat
+                            dibagikan kepada pihak lain.
+                        </p>
+
+
+                        <button
+                            id="generateShareButton"
+                            class="primary-button full-button"
+                            type="button"
+                        >
+                            Generate Share Link
+                        </button>
+
+
+                        <div
+                            id="shareResult"
+                            class="result-box hidden"
+                        >
+
+                            <label>
+                                Share Link
+                            </label>
+
+                            <div class="link-row">
+
+                                <input
+                                    id="shareLink"
+                                    type="text"
+                                    readonly
+                                >
+
+                                <button
+                                    id="copyShareButton"
+                                    class="copy-button"
+                                    type="button"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
+
+                            <p
+                                id="shareMessage"
+                                class="small-message"
+                            ></p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==============================
+                     QR VERIFICATION
+                     ============================== -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon qr-icon">
+                        QR
+                    </div>
+
+                    <div class="tool-content">
+
+                        <div class="eyebrow">
+                            QR VERIFICATION
+                        </div>
+
+                        <h3>
+                            Verifikasi dengan QR
+                        </h3>
+
+                        <p>
+                            Gunakan QR Code untuk
+                            memudahkan pihak lain
+                            memverifikasi passport.
+                        </p>
+
+
+                        <div
+                            id="qrContainer"
+                            class="qr-container"
+                        >
+
+                            <div
+                                id="qrLoading"
+                                class="qr-placeholder"
+                            >
+                                QR Code belum dimuat.
+                            </div>
+
+                            <img
+                                id="qrImage"
+                                class="qr-image hidden"
+                                alt="QR Verification"
+                            >
+
+                        </div>
+
+
+                        <button
+                            id="loadQrButton"
+                            class="secondary-button full-button"
+                            type="button"
+                        >
+                            Tampilkan QR
+                        </button>
+
+
+                        <button
+                            id="downloadQrButton"
+                            class="secondary-button full-button hidden"
+                            type="button"
+                        >
+                            Download QR
+                        </button>
+
+
+                        <div
+                            id="qrMessage"
+                            class="small-message"
+                        ></div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==============================
+                     EXPORT PASSPORT
+                     ============================== -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon export-icon">
+                        ↓
+                    </div>
+
+                    <div class="tool-content">
+
+                        <div class="eyebrow">
+                            EXPORT PASSPORT
+                        </div>
+
+                        <h3>
+                            Export Passport
+                        </h3>
+
+                        <p>
+                            Unduh Economic Passport
+                            untuk dokumentasi atau
+                            kebutuhan bisnis.
+                        </p>
+
+
+                        <div class="export-info">
+
+                            <div>
+                                <span>
+                                    Format
+                                </span>
+
+                                <strong>
+                                    File Passport
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Business
+                                </span>
+
+                                <strong id="exportBusinessName">
+                                    -
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            id="exportButton"
+                            class="primary-button full-button"
+                            type="button"
+                        >
+                            Export Passport
+                        </button>
+
+
+                        <p
+                            id="exportMessage"
+                            class="small-message"
+                        ></p>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+    
+    <script src="passport-tools.js"></script>
+
+</body>
+
+</html>

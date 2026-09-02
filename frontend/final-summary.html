@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Final Summary
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="final-summary.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="top-header">
+
+        <div class="header-inner">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Final Summary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="page-container">
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+        >
+            ← Kembali
+        </button>
+
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <section
+            id="loadingState"
+            class="loading-state"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat final summary...
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <section
+            id="errorState"
+            class="error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h3>
+                Final Summary Tidak Dapat Dimuat
+            </h3>
+
+            <p id="errorMessage">
+                Terjadi kesalahan saat mengambil data.
+            </p>
+
+            <button
+                type="button"
+                class="retry-button"
+                id="retryButton"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div
+            id="summaryContent"
+            style="display: none;"
+        >
+
+
+            <!-- =================================================
+                 PAGE HEADING
+            ================================================== -->
+
+            <section class="page-heading">
+
+                <span class="eyebrow">
+                    FINAL ASSESSMENT
+                </span>
+
+                <h2>
+                    Final Summary
+                </h2>
+
+                <p>
+                    Ringkasan akhir hasil Economic Passport
+                    untuk melihat kondisi bisnis secara keseluruhan.
+                </p>
+
+                <div
+                    class="business-name"
+                    id="businessName"
+                >
+                    -
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FINAL SCORE
+            ================================================== -->
+
+            <section class="final-score-card">
+
+
+                <div class="final-score-content">
+
+
+                    <div class="final-score-text">
+
+                        <span class="status-label">
+                            Overall Business Score
+                        </span>
+
+                        <h3 id="overallScore">
+                            -
+                        </h3>
+
+                        <div
+                            class="score-level"
+                            id="scoreLevel"
+                        >
+                            -
+                        </div>
+
+                        <p
+                            id="overallStatus"
+                        >
+                            -
+                        </p>
+
+                    </div>
+
+
+                    <div class="score-circle">
+
+                        <strong id="scoreCircle">
+                            -
+                        </strong>
+
+                        <span>
+                            SCORE
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="passport-meta">
+
+
+                    <div class="meta-item">
+
+                        <span>
+                            Passport ID
+                        </span>
+
+                        <strong id="passportId">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <span>
+                            Passport Status
+                        </span>
+
+                        <strong id="passportStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="meta-item">
+
+                        <span>
+                            Assessment Date
+                        </span>
+
+                        <strong id="assessmentDate">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BUSINESS CONDITION
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        BUSINESS CONDITION
+                    </span>
+
+                    <h3>
+                        Kondisi Bisnis
+                    </h3>
+
+                    <p>
+                        Ringkasan kondisi bisnis berdasarkan
+                        hasil assessment terakhir.
+                    </p>
+
+                </div>
+
+
+
+                <div class="condition-card">
+
+
+                    <div class="condition-icon">
+                        ✓
+                    </div>
+
+
+                    <div class="condition-content">
+
+                        <h4 id="conditionTitle">
+                            -
+                        </h4>
+
+                        <p id="conditionDescription">
+                            -
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CATEGORY SUMMARY
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        CATEGORY SUMMARY
+                    </span>
+
+                    <h3>
+                        Ringkasan Kategori
+                    </h3>
+
+                    <p>
+                        Performa setiap kategori dalam
+                        Economic Passport.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-grid"
+                    id="categoryGrid"
+                >
+
+
+                    <!-- PROFIT -->
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <span>
+                                Profit
+                            </span>
+
+                            <strong
+                                id="profitScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-fill"
+                                id="profitProgress"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-footer">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong
+                                id="profitStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PEOPLE -->
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <span>
+                                People
+                            </span>
+
+                            <strong
+                                id="peopleScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-fill"
+                                id="peopleProgress"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-footer">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong
+                                id="peopleStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PLANET -->
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <span>
+                                Planet
+                            </span>
+
+                            <strong
+                                id="planetScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-fill"
+                                id="planetProgress"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-footer">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong
+                                id="planetStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MARKETPLACE -->
+
+                    <div class="category-card">
+
+                        <div class="category-header">
+
+                            <span>
+                                Marketplace
+                            </span>
+
+                            <strong
+                                id="marketplaceScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-fill"
+                                id="marketplaceProgress"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-footer">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong
+                                id="marketplaceStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTION PLAN SUMMARY
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        ACTION PLAN
+                    </span>
+
+                    <h3>
+                        Action Plan Summary
+                    </h3>
+
+                    <p>
+                        Ringkasan tindakan yang telah
+                        ditentukan untuk bisnis.
+                    </p>
+
+                </div>
+
+
+
+                <div class="action-summary-card">
+
+
+                    <div class="action-summary-item">
+
+                        <span>
+                            Total Action
+                        </span>
+
+                        <strong
+                            id="totalActions"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="action-summary-item">
+
+                        <span>
+                            Completed
+                        </span>
+
+                        <strong
+                            id="completedActions"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="action-summary-item">
+
+                        <span>
+                            In Progress
+                        </span>
+
+                        <strong
+                            id="progressActions"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="action-summary-item">
+
+                        <span>
+                            Remaining
+                        </span>
+
+                        <strong
+                            id="remainingActions"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VERIFICATION SUMMARY
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        VERIFICATION
+                    </span>
+
+                    <h3>
+                        Verification Status
+                    </h3>
+
+                </div>
+
+
+
+                <div class="verification-summary-card">
+
+
+                    <div class="verification-icon">
+                        ✓
+                    </div>
+
+
+                    <div class="verification-summary-content">
+
+                        <strong
+                            id="verificationStatus"
+                        >
+                            -
+                        </strong>
+
+                        <p
+                            id="verificationMessage"
+                        >
+                            -
+                        </p>
+
+                    </div>
+
+
+                    <div class="remaining-validity">
+
+                        <span>
+                            Remaining
+                        </span>
+
+                        <strong
+                            id="remainingDays"
+                        >
+                            -
+                        </strong>
+
+                        <small>
+                            hari
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FINAL CONCLUSION
+            ================================================== -->
+
+            <section class="conclusion-section">
+
+
+                <div class="conclusion-header">
+
+                    <span class="eyebrow">
+                        FINAL CONCLUSION
+                    </span>
+
+                    <h3>
+                        Kesimpulan Economic Passport
+                    </h3>
+
+                </div>
+
+
+                <div class="conclusion-content">
+
+                    <p id="finalConclusion">
+                        -
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <section class="navigation-section">
+
+
+                <div class="navigation-header">
+
+                    <span class="eyebrow">
+                        COMPLETE
+                    </span>
+
+                    <h3>
+                        Economic Passport Selesai
+                    </h3>
+
+                    <p>
+                        Kamu dapat kembali ke dashboard
+                        atau melihat detail assessment lainnya.
+                    </p>
+
+                </div>
+
+
+
+                <div class="navigation-buttons">
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="dashboardButton"
+                    >
+                        ← Dashboard
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="actionPlanButton"
+                    >
+                        Action Plan
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button primary"
+                        id="statusSummaryButton"
+                    >
+                        Status Summary
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script
+        src="final-summary.js"
+    ></script>
+
+
+</body>
+
+</html>

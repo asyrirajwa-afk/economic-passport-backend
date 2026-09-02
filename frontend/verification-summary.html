@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Verification Summary
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="verification-summary.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="top-header">
+
+        <div class="header-inner">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Verification Summary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="page-container">
+
+
+        <!-- BACK -->
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+        >
+            ← Kembali
+        </button>
+
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <section
+            id="loadingState"
+            class="loading-state"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat data verification...
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <section
+            id="errorState"
+            class="error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h3>
+                Verification Tidak Dapat Dimuat
+            </h3>
+
+            <p id="errorMessage">
+                Terjadi kesalahan saat mengambil data.
+            </p>
+
+            <button
+                type="button"
+                class="retry-button"
+                id="retryButton"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div
+            id="summaryContent"
+            style="display: none;"
+        >
+
+
+            <!-- =================================================
+                 HEADING
+            ================================================== -->
+
+            <section class="page-heading">
+
+                <span class="eyebrow">
+                    VERIFICATION
+                </span>
+
+                <h2>
+                    Verification Summary
+                </h2>
+
+                <p>
+                    Informasi validitas dan status
+                    Economic Passport bisnis kamu.
+                </p>
+
+                <div
+                    class="business-name"
+                    id="businessName"
+                >
+                    -
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN VERIFICATION CARD
+            ================================================== -->
+
+            <section class="verification-card">
+
+
+                <div class="verification-status-area">
+
+
+                    <div
+                        class="verification-icon"
+                        id="verificationIcon"
+                    >
+                        ✓
+                    </div>
+
+
+                    <div>
+
+                        <span class="status-label">
+                            Verification Status
+                        </span>
+
+                        <h3
+                            id="verificationStatus"
+                            class="verification-status"
+                        >
+                            -
+                        </h3>
+
+                        <p
+                            id="verificationMessage"
+                            class="verification-message"
+                        >
+                            -
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PASSPORT INFORMATION
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        PASSPORT
+                    </span>
+
+                    <h3>
+                        Passport Information
+                    </h3>
+
+                    <p>
+                        Informasi passport yang digunakan
+                        untuk proses verifikasi.
+                    </p>
+
+                </div>
+
+
+
+                <div class="info-grid">
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Passport ID
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="passportId"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Business Score
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="passportScore"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Passport Status
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="passportStatus"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Verification Level
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="verificationLevel"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VALIDITY
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        VALIDITY
+                    </span>
+
+                    <h3>
+                        Masa Berlaku Passport
+                    </h3>
+
+                    <p>
+                        Informasi periode berlaku
+                        Economic Passport.
+                    </p>
+
+                </div>
+
+
+
+                <div class="validity-card">
+
+
+                    <div class="validity-main">
+
+                        <span>
+                            Sisa Masa Berlaku
+                        </span>
+
+                        <strong
+                            id="remainingDays"
+                        >
+                            -
+                        </strong>
+
+                        <small>
+                            hari
+                        </small>
+
+                    </div>
+
+
+                    <div class="validity-details">
+
+
+                        <div class="validity-item">
+
+                            <span>
+                                Umur Passport
+                            </span>
+
+                            <strong
+                                id="ageDays"
+                            >
+                                -
+                            </strong>
+
+                            <small>
+                                hari
+                            </small>
+
+                        </div>
+
+
+                        <div class="validity-item">
+
+                            <span>
+                                Masa Berlaku
+                            </span>
+
+                            <strong
+                                id="validityDays"
+                            >
+                                -
+                            </strong>
+
+                            <small>
+                                hari
+                            </small>
+
+                        </div>
+
+
+                        <div class="validity-item">
+
+                            <span>
+                                Tanggal Terbit
+                            </span>
+
+                            <strong
+                                id="createdAt"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="validity-item">
+
+                            <span>
+                                Perkiraan Expired
+                            </span>
+
+                            <strong
+                                id="expiryDate"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VALIDITY PROGRESS
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        VALIDITY PROGRESS
+                    </span>
+
+                    <h3>
+                        Status Masa Berlaku
+                    </h3>
+
+                </div>
+
+
+
+                <div class="progress-card">
+
+
+                    <div class="progress-header">
+
+                        <span>
+                            Masa berlaku terpakai
+                        </span>
+
+                        <strong
+                            id="validityPercentage"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill"
+                            id="validityProgress"
+                        ></div>
+
+                    </div>
+
+
+                    <p id="validityDescription">
+                        -
+                    </p>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NEXT STEP
+            ================================================== -->
+
+            <section class="navigation-section">
+
+
+                <div class="navigation-header">
+
+                    <span class="eyebrow">
+                        NEXT STEP
+                    </span>
+
+                    <h3>
+                        Lanjutkan Economic Passport
+                    </h3>
+
+                    <p>
+                        Lihat ringkasan akhir atau kembali
+                        ke analisis bisnis.
+                    </p>
+
+                </div>
+
+
+
+                <div class="navigation-buttons">
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="statusSummaryButton"
+                    >
+                        Status Summary
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button primary"
+                        id="finalSummaryButton"
+                    >
+                        Final Summary →
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script
+        src="verification-summary.js"
+    ></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Business Health Check
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="health-check.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="page-header">
+
+        <div class="header-inner">
+
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ←
+            </button>
+
+
+            <div class="header-brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Business Health Check
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="health-container">
+
+
+        <!-- =================================================
+             PAGE INTRO
+        ================================================== -->
+
+        <section class="page-intro">
+
+            <span class="section-label">
+                BUSINESS HEALTH CHECK
+            </span>
+
+            <h2>
+                Kesehatan Bisnis Kamu
+            </h2>
+
+            <p>
+                Periksa kondisi bisnis secara menyeluruh
+                berdasarkan empat aspek utama Economic Passport.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BUSINESS INFO
+        ================================================== -->
+
+        <section
+            id="businessInfo"
+            class="business-card"
+        >
+
+            <div>
+
+                <span>
+                    Bisnis
+                </span>
+
+                <strong id="businessName">
+                    Memuat...
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Business ID
+                </span>
+
+                <strong id="businessId">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Passport Status
+                </span>
+
+                <strong id="passportStatus">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Business Score
+                </span>
+
+                <strong id="businessScore">
+                    -
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             OVERALL HEALTH
+        ================================================== -->
+
+        <section class="overall-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Kondisi Keseluruhan
+                </h2>
+
+                <p>
+                    Ringkasan kesehatan bisnis berdasarkan
+                    seluruh area penilaian.
+                </p>
+
+            </div>
+
+
+            <div
+                id="overallHealth"
+                class="overall-card"
+            >
+
+                <div class="loading-state">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Memeriksa kondisi bisnis...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATUS SUMMARY
+        ================================================== -->
+
+        <section class="status-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Ringkasan Status
+                </h2>
+
+                <p>
+                    Jumlah area berdasarkan kondisi kesehatan.
+                </p>
+
+            </div>
+
+
+            <div class="status-grid">
+
+
+                <div class="status-card healthy">
+
+                    <span>
+                        Healthy
+                    </span>
+
+                    <strong id="healthyCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="status-card monitor">
+
+                    <span>
+                        Monitor
+                    </span>
+
+                    <strong id="monitorCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="status-card attention">
+
+                    <span>
+                        Attention
+                    </span>
+
+                    <strong id="attentionCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="status-card critical">
+
+                    <span>
+                        Critical
+                    </span>
+
+                    <strong id="criticalCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HEALTH AREAS
+        ================================================== -->
+
+        <section class="areas-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Kesehatan Setiap Area
+                </h2>
+
+                <p>
+                    Kondisi Profit, People, Planet,
+                    dan Marketplace.
+                </p>
+
+            </div>
+
+
+            <div
+                id="healthAreas"
+                class="health-areas"
+            >
+
+                <div class="loading-state">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Memuat data area...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HIGHEST RISK
+        ================================================== -->
+
+        <section class="risk-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Area yang Perlu Diperhatikan
+                </h2>
+
+                <p>
+                    Area dengan score terendah
+                    menjadi prioritas evaluasi.
+                </p>
+
+            </div>
+
+
+            <div
+                id="highestRisk"
+                class="risk-card"
+            >
+
+                <div class="loading-state">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Memuat area risiko...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR STATE
+        ================================================== -->
+
+        <section
+            id="errorState"
+            class="error-state"
+            style="display:none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h2>
+                Tidak dapat memuat data
+            </h2>
+
+            <p id="errorMessage">
+                Terjadi kesalahan.
+            </p>
+
+            <button
+                type="button"
+                id="retryButton"
+                class="primary-button"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <script
+        src="health-check.js"
+    ></script>
+
+
+</body>
+
+</html>

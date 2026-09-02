@@ -1,0 +1,2312 @@
+/* =========================================================
+   ECONOMIC PASSPORT - DASHBOARD CSS
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9fc 0%,
+            #eef3f8 50%,
+            #e8eef6 100%
+        );
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #e3e9f0;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 15px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.brand-small {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.brand-icon-small {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #1f527d;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 12px rgba(31, 82, 125, 0.16);
+}
+
+.brand-small h1 {
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+.brand-small p {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-button {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 10px 18px;
+
+    background: #1f527d;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #174467;
+
+    box-shadow:
+        0 5px 12px rgba(31, 82, 125, 0.15);
+
+    transform: translateY(-1px);
+}
+
+.logout-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 36px 28px 70px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome-section {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.welcome-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #102a43;
+}
+
+.welcome-section p {
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    color: #718096;
+}
+
+.add-business-button {
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 19px;
+
+    background: #1f527d;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.add-business-button:hover {
+    background: #174467;
+
+    box-shadow:
+        0 6px 15px rgba(31, 82, 125, 0.16);
+
+    transform: translateY(-1px);
+}
+
+.add-business-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.statistics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 34px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 21px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(31, 82, 125, 0.055);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 25px
+        rgba(31, 82, 125, 0.09);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: #eaf3fa;
+    color: #1f527d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.stat-content span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #718096;
+
+    margin-bottom: 5px;
+}
+
+.stat-content strong {
+    display: block;
+
+    font-size: 24px;
+
+    color: #102a43;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.dashboard-section {
+    margin-bottom: 32px;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #102a43;
+}
+
+.section-heading p {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   BUSINESS OVERVIEW
+========================================================= */
+
+.overview-card {
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 7px 25px
+        rgba(31, 82, 125, 0.055);
+}
+
+.overview-business {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 21px;
+
+    border-bottom:
+        1px solid #edf1f5;
+}
+
+.overview-business span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+
+    color: #718096;
+}
+
+.overview-business h3 {
+    font-size: 21px;
+
+    color: #102a43;
+}
+
+.overview-business p {
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    color: #718096;
+}
+
+.business-status {
+    text-align: right;
+}
+
+.business-status strong {
+    display: block;
+
+    font-size: 15px;
+
+    color: #1f527d;
+}
+
+
+/* =========================================================
+   MAIN SCORE
+========================================================= */
+
+.score-overview {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px 0;
+}
+
+.main-score span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #718096;
+
+    margin-bottom: 5px;
+}
+
+.main-score strong {
+    font-size: 43px;
+    font-weight: 700;
+
+    color: #1f527d;
+}
+
+.main-score small {
+    font-size: 13px;
+
+    color: #718096;
+}
+
+.score-trend {
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    background: #eaf3fa;
+
+    color: #1f527d;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SCORE COMPONENTS
+========================================================= */
+
+.score-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+.score-item {
+    padding: 16px;
+
+    border-radius: 11px;
+
+    background: #f7fafc;
+
+    border: 1px solid #edf2f7;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.score-item:hover {
+    background: #f1f6fa;
+
+    transform: translateY(-1px);
+}
+
+.score-item span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    color: #718096;
+}
+
+.score-item strong {
+    font-size: 20px;
+
+    color: #1f527d;
+}
+
+
+/* =========================================================
+   FINANCIAL
+========================================================= */
+
+.financial-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.financial-card {
+    padding: 19px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(31, 82, 125, 0.035);
+}
+
+.financial-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    color: #718096;
+}
+
+.financial-card strong {
+    display: block;
+
+    font-size: 18px;
+
+    color: #102a43;
+}
+
+
+/* =========================================================
+   SCORE HISTORY
+========================================================= */
+
+.score-history {
+    min-height: 160px;
+
+    padding: 21px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(31, 82, 125, 0.035);
+}
+
+.history-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid #edf1f5;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-date {
+    font-size: 12px;
+
+    color: #718096;
+}
+
+.history-score {
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #1f527d;
+}
+
+.history-change {
+    font-size: 11px;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary-button {
+    border:
+        1px solid #d6e1eb;
+
+    border-radius: 9px;
+
+    padding: 9px 14px;
+
+    background: #ffffff;
+    color: #1f527d;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.secondary-button:hover {
+    background: #f2f7fb;
+
+    border-color: #c5d5e3;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.recommendation-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(31, 82, 125, 0.035);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px
+        rgba(31, 82, 125, 0.07);
+}
+
+.recommendation-rank {
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #eaf3fa;
+    color: #1f527d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.recommendation-info {
+    flex: 1;
+}
+
+.recommendation-info h3 {
+    font-size: 15px;
+
+    color: #102a43;
+}
+
+.recommendation-info p {
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #718096;
+}
+
+.recommendation-score {
+    text-align: right;
+}
+
+.recommendation-score span {
+    display: block;
+
+    font-size: 9px;
+
+    color: #718096;
+}
+
+.recommendation-score strong {
+    font-size: 23px;
+
+    color: #1f527d;
+}
+
+
+/* =========================================================
+   HEALTH CHECK
+========================================================= */
+
+.health-check {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+.health-item {
+    padding: 18px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(31, 82, 125, 0.035);
+}
+
+.health-item h3 {
+    font-size: 14px;
+
+    color: #102a43;
+}
+
+.health-item p {
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #718096;
+}
+
+.health-status {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    background: #eaf3fa;
+
+    color: #1f527d;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.alert-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(31, 82, 125, 0.03);
+}
+
+.alert-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.alert-content h3 {
+    font-size: 13px;
+
+    color: #102a43;
+}
+
+.alert-content p {
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   ACTION PLAN
+========================================================= */
+
+.action-plan {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.action-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 17px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(31, 82, 125, 0.03);
+}
+
+.action-number {
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #eaf3fa;
+    color: #1f527d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.action-content h3 {
+    font-size: 13px;
+
+    color: #102a43;
+}
+
+.action-content p {
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   BUSINESS LIST
+========================================================= */
+
+.business-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   BUSINESS CARD
+========================================================= */
+
+.business-card {
+    position: relative;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e1e8ef;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(31, 82, 125, 0.055);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Garis aksen di kiri */
+.business-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #1f527d;
+}
+
+.business-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #d4e0ea;
+
+    box-shadow:
+        0 11px 28px
+        rgba(31, 82, 125, 0.10);
+}
+
+
+/* =========================================================
+   BUSINESS CARD TOP
+========================================================= */
+
+.business-card-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding-bottom: 16px;
+
+    border-bottom:
+        1px solid #edf1f5;
+}
+
+.business-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #102a43;
+}
+
+.business-card-category {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   PASSPORT SCORE DI CARD
+========================================================= */
+
+.business-card-score {
+    min-width: 95px;
+
+    text-align: right;
+}
+
+.business-card-score span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    color: #94a3b8;
+}
+
+.business-card-score strong {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 46px;
+    height: 30px;
+
+    padding: 0 9px;
+
+    border-radius: 8px;
+
+    background: #eaf3fa;
+
+    color: #1f527d;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PASSPORT STATUS
+========================================================= */
+
+.business-card-status {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    padding: 10px 12px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #edf1f5;
+
+    border-radius: 10px;
+}
+
+.business-card-status span {
+    font-size: 11px;
+
+    color: #718096;
+}
+
+.business-card-status strong {
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    background: #fff7ed;
+
+    color: #c26a09;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BUSINESS INFO
+========================================================= */
+
+.business-card-info {
+    margin-top: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+.business-info-item {
+    min-width: 0;
+
+    padding: 11px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #edf1f5;
+
+    border-radius: 9px;
+}
+
+.business-info-item span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.35px;
+
+    color: #8a99ab;
+}
+
+.business-info-item strong {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BUSINESS ACTIONS
+========================================================= */
+
+.business-card-actions {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr 1fr 1fr auto;
+
+    gap: 7px;
+
+    margin-top: 16px;
+}
+
+.business-card-actions button {
+    min-height: 35px;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.business-card-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.business-card-actions button:active {
+    transform: translateY(0);
+}
+
+
+/* Passport */
+.passport-button {
+    border: none;
+
+    background: #1f527d;
+
+    color: #ffffff;
+}
+
+.passport-button:hover {
+    background: #174467;
+}
+
+
+/* Financial */
+.financial-button {
+    border:
+        1px solid #d4e0ea;
+
+    background: #eef5fa;
+
+    color: #1f527d;
+}
+
+.financial-button:hover {
+    background: #e1edf5;
+}
+
+
+/* Marketplace */
+.marketplace-button {
+    border:
+        1px solid #dce4eb;
+
+    background: #f7f9fb;
+
+    color: #475569;
+}
+
+.marketplace-button:hover {
+    background: #edf2f6;
+}
+
+
+/* Delete */
+.delete-button {
+    border:
+        1px solid #fecaca;
+
+    background: #fff5f5;
+
+    color: #dc2626;
+}
+
+.delete-button:hover {
+    background: #fee2e2;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-state {
+    grid-column: 1 / -1;
+
+    min-height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    color: #718096;
+}
+
+.loading-state p {
+    font-size: 12px;
+}
+
+.loading-spinner {
+    width: 29px;
+    height: 29px;
+
+    margin-bottom: 11px;
+
+    border:
+        3px solid #e5eaf0;
+
+    border-top-color:
+        #1f527d;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border:
+        1px dashed #cbd5e1;
+
+    border-radius: 17px;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+
+    color: #334155;
+
+    margin-bottom: 7px;
+}
+
+.empty-state p {
+    max-width: 420px;
+
+    margin: 0 auto 20px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #718096;
+}
+
+.empty-add-button {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 9px;
+
+    background: #1f527d;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.empty-add-button:hover {
+    background: #174467;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.dashboard-error {
+    padding: 22px;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border:
+        1px solid #fecaca;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px rgba(220, 38, 38, 0.04);
+}
+
+.dashboard-error strong {
+    font-size: 14px;
+
+    color: #dc2626;
+}
+
+.dashboard-error p {
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-container {
+        padding:
+            30px 20px 55px;
+    }
+
+    .statistics-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .business-list {
+        grid-template-columns:
+            1fr;
+    }
+
+    .score-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .financial-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .health-check {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        padding:
+            12px 16px;
+    }
+
+    .brand-small {
+        gap: 9px;
+    }
+
+    .brand-small h1 {
+        font-size: 15px;
+    }
+
+    .brand-small p {
+        display: none;
+    }
+
+    .brand-icon-small {
+        width: 39px;
+        height: 39px;
+
+        border-radius: 10px;
+
+        font-size: 13px;
+    }
+
+    .logout-button {
+        padding:
+            9px 13px;
+
+        font-size: 11px;
+    }
+
+
+    .dashboard-container {
+        padding:
+            25px 15px 45px;
+    }
+
+
+    .welcome-section {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-bottom: 23px;
+    }
+
+    .welcome-section h2 {
+        font-size: 23px;
+    }
+
+    .welcome-section p {
+        font-size: 12px;
+    }
+
+    .add-business-button {
+        width: 100%;
+    }
+
+
+    .statistics-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+
+        margin-bottom: 28px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .overview-card {
+        padding: 18px;
+    }
+
+    .overview-business {
+        flex-direction: column;
+    }
+
+    .business-status {
+        text-align: left;
+    }
+
+
+    .score-overview {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .main-score strong {
+        font-size: 37px;
+    }
+
+
+    .score-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .financial-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .business-list {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .business-card {
+        padding: 18px;
+    }
+
+    .business-card-top {
+        gap: 10px;
+    }
+
+    .business-card h3 {
+        font-size: 17px;
+    }
+
+    .business-card-category {
+        font-size: 11px;
+    }
+
+
+    .business-card-actions {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .business-card-actions button {
+        width: 100%;
+    }
+
+
+    .recommendation-card {
+        align-items: flex-start;
+    }
+
+    .recommendation-score {
+        min-width: 55px;
+    }
+
+
+    .secondary-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .dashboard-container {
+        padding:
+            22px 13px 40px;
+    }
+
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .overview-card {
+        padding: 16px;
+    }
+
+
+    .score-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .score-item {
+        padding: 12px;
+    }
+
+
+    .business-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+
+    .business-card-info {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .business-card-actions {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .business-card-score {
+        min-width: 70px;
+    }
+
+
+    .business-card-status {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+}
+
+/* =========================================================
+   FINAL BUSINESS CARD OVERRIDE
+   Untuk card yang dibuat oleh dashboard.js
+========================================================= */
+
+
+/* CARD */
+.business-card {
+    position: relative !important;
+
+    padding: 24px !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dfe7ef !important;
+
+    border-radius: 18px !important;
+
+    box-shadow:
+        0 6px 22px rgba(31, 82, 125, 0.07) !important;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+.business-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(31, 82, 125, 0.12) !important;
+}
+
+
+/* GARIS BIRU KIRI */
+.business-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #1f527d;
+}
+
+
+/* =========================================================
+   BAGIAN ATAS CARD
+========================================================= */
+
+.business-card-top {
+    display: flex !important;
+
+    justify-content: space-between !important;
+
+    align-items: flex-start !important;
+
+    gap: 20px;
+
+    padding-left: 0;
+}
+
+
+/* NAMA BISNIS */
+.business-card h3 {
+    margin: 0 !important;
+
+    font-size: 19px !important;
+
+    line-height: 1.25;
+
+    font-weight: 700 !important;
+
+    color: #102a43 !important;
+}
+
+
+/* KATEGORI */
+.business-card-category {
+    margin-top: 5px !important;
+
+    font-size: 12px !important;
+
+    color: #718096 !important;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.business-card-score {
+    min-width: 105px;
+
+    text-align: right;
+}
+
+.business-card-score span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    color: #94a3b8;
+}
+
+.business-card-score strong {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 52px;
+    height: 32px;
+
+    padding: 0 10px;
+
+    border-radius: 9px;
+
+    background: #eaf3fa;
+
+    color: #1f527d;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS PASSPORT
+========================================================= */
+
+.business-card-status {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    width: 100%;
+
+    margin-top: 16px !important;
+
+    padding: 11px 13px !important;
+
+    background: #f8fafc !important;
+
+    border: 1px solid #edf1f5 !important;
+
+    border-radius: 10px !important;
+
+    text-align: left !important;
+}
+
+.business-card-status span {
+    font-size: 11px;
+
+    color: #718096;
+}
+
+.business-card-status strong {
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    background: #fff7ed;
+
+    color: #c26a09;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INFO BISNIS
+========================================================= */
+
+.business-card-info {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 9px !important;
+
+    margin-top: 15px !important;
+}
+
+.business-info-item {
+    min-width: 0;
+
+    padding: 11px 12px !important;
+
+    background: #f8fafc !important;
+
+    border: 1px solid #edf1f5 !important;
+
+    border-radius: 9px !important;
+}
+
+.business-info-item span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.35px;
+
+    color: #8a99ab;
+}
+
+.business-info-item strong {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   JIKA JS MASIH MENGGUNAKAN STRUKTUR LAMA
+========================================================= */
+
+.business-card-info > div {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   ACTION BUTTON AREA
+   Menangani .business-card-actions maupun
+   .business-actions
+========================================================= */
+
+.business-card-actions,
+.business-actions {
+    display: grid !important;
+
+    grid-template-columns:
+        1.2fr 1fr 1fr auto !important;
+
+    gap: 8px !important;
+
+    width: 100%;
+
+    margin-top: 17px !important;
+}
+
+
+/* =========================================================
+   SEMUA BUTTON DI DALAM BUSINESS CARD
+========================================================= */
+
+.business-card button {
+    min-height: 36px !important;
+
+    padding: 8px 11px !important;
+
+    border-radius: 8px !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+.business-card button:hover {
+    transform: translateY(-1px);
+}
+
+.business-card button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LIHAT PASSPORT
+========================================================= */
+
+.business-card .passport-button,
+.business-card button[data-action="passport"] {
+    border: none !important;
+
+    background: #1f527d !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 3px 8px rgba(31, 82, 125, 0.15);
+}
+
+.business-card .passport-button:hover,
+.business-card button[data-action="passport"]:hover {
+    background: #174467 !important;
+}
+
+
+/* =========================================================
+   LENGKAPI DATA
+========================================================= */
+
+.business-card .financial-button,
+.business-card button[data-action="financial"] {
+    border: 1px solid #cbdce9 !important;
+
+    background: #eef5fa !important;
+
+    color: #1f527d !important;
+}
+
+.business-card .financial-button:hover,
+.business-card button[data-action="financial"]:hover {
+    background: #e1edf5 !important;
+}
+
+
+/* =========================================================
+   MARKETPLACE
+========================================================= */
+
+.business-card .marketplace-button,
+.business-card button[data-action="marketplace"] {
+    border: 1px solid #d8e1e9 !important;
+
+    background: #f7f9fb !important;
+
+    color: #475569 !important;
+}
+
+.business-card .marketplace-button:hover,
+.business-card button[data-action="marketplace"]:hover {
+    background: #edf2f6 !important;
+}
+
+
+/* =========================================================
+   HAPUS
+========================================================= */
+
+.business-card .delete-button,
+.business-card button[data-action="delete"] {
+    border: 1px solid #fecaca !important;
+
+    background: #fff5f5 !important;
+
+    color: #dc2626 !important;
+}
+
+.business-card .delete-button:hover,
+.business-card button[data-action="delete"]:hover {
+    background: #fee2e2 !important;
+}
+
+
+/* =========================================================
+   FALLBACK UNTUK BUTTON BIASA
+   Kalau dashboard.js belum memberi class sama sekali
+========================================================= */
+
+.business-card-actions button:nth-child(1),
+.business-actions button:nth-child(1) {
+    border: none !important;
+
+    background: #1f527d !important;
+
+    color: #ffffff !important;
+}
+
+.business-card-actions button:nth-child(2),
+.business-actions button:nth-child(2) {
+    border: 1px solid #cbdce9 !important;
+
+    background: #eef5fa !important;
+
+    color: #1f527d !important;
+}
+
+.business-card-actions button:nth-child(3),
+.business-actions button:nth-child(3) {
+    border: 1px solid #d8e1e9 !important;
+
+    background: #f7f9fb !important;
+
+    color: #475569 !important;
+}
+
+.business-card-actions button:nth-child(4),
+.business-actions button:nth-child(4) {
+    border: 1px solid #fecaca !important;
+
+    background: #fff5f5 !important;
+
+    color: #dc2626 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .business-card {
+        padding: 18px !important;
+    }
+
+    .business-card-top {
+        gap: 10px;
+    }
+
+    .business-card h3 {
+        font-size: 17px !important;
+    }
+
+    .business-card-score {
+        min-width: 75px;
+    }
+
+    .business-card-info {
+        grid-template-columns: 1fr !important;
+    }
+
+    .business-card-actions,
+    .business-actions {
+        grid-template-columns:
+            1fr 1fr !important;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .business-card-actions,
+    .business-actions {
+        grid-template-columns:
+            1fr !important;
+    }
+
+}
+
+/* =========================================================
+   SCORE HISTORY BUTTON
+========================================================= */
+
+.score-history-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.score-history-button {
+    flex-shrink: 0;
+
+    padding: 9px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #174d7a;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.score-history-button:hover {
+    background: #f1f6fa;
+
+    border-color: #174d7a;
+
+    transform: translateY(-1px);
+}
+
+
+.score-history-button:active {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 600px) {
+
+    .score-history-heading {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .score-history-button {
+        width: fit-content;
+    }
+
+}

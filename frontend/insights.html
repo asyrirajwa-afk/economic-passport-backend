@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insights - Economic Passport</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="insights.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                EP
+            </div>
+
+            <div>
+                <h1>Economic Passport</h1>
+                <p>Business Intelligence for Better Decisions</p>
+            </div>
+
+        </div>
+
+        <button
+            id="logoutButton"
+            class="logout"
+            type="button"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- BACK -->
+
+    <button
+        id="backButton"
+        class="back"
+        type="button"
+    >
+        ← Kembali ke Trend
+    </button>
+
+
+    <!-- LOADING -->
+
+    <section
+        id="loadingState"
+        class="state"
+    >
+
+        <div class="spinner"></div>
+
+        <p>
+            Memuat business insights...
+        </p>
+
+    </section>
+
+
+    <!-- ERROR -->
+
+    <section
+        id="errorState"
+        class="state hidden"
+    >
+
+        <div class="error-icon">
+            !
+        </div>
+
+        <h2>
+            Data tidak dapat dimuat
+        </h2>
+
+        <p id="errorMessage">
+            Terjadi kesalahan saat mengambil data insights.
+        </p>
+
+        <div class="actions">
+
+            <button
+                id="retryButton"
+                class="primary"
+                type="button"
+            >
+                Coba Lagi
+            </button>
+
+            <button
+                id="errorBackButton"
+                class="secondary"
+                type="button"
+            >
+                Kembali
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <div
+        id="content"
+        class="hidden"
+    >
+
+
+        <!-- TITLE -->
+
+        <section class="title">
+
+            <div class="eyebrow">
+                BUSINESS INSIGHTS
+            </div>
+
+            <h2 id="businessName">
+                Economic Passport
+            </h2>
+
+            <p>
+                Pahami kekuatan dan risiko bisnis berdasarkan hasil assessment.
+            </p>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+
+        <section class="summary">
+
+
+            <article class="card summary-card">
+
+                <span class="label">
+                    Overall Score
+                </span>
+
+                <b id="overallScore">
+                    0.00
+                </b>
+
+                <p id="overallStatus">
+                    -
+                </p>
+
+            </article>
+
+
+            <article class="card summary-card">
+
+                <span class="label">
+                    Area Kuat
+                </span>
+
+                <b id="strengthCount">
+                    0
+                </b>
+
+                <p>
+                    Area dengan performa baik
+                </p>
+
+            </article>
+
+
+            <article class="card summary-card">
+
+                <span class="label">
+                    Area Berisiko
+                </span>
+
+                <b id="riskCount">
+                    0
+                </b>
+
+                <p>
+                    Area yang perlu diperhatikan
+                </p>
+
+            </article>
+
+
+            <article class="card summary-card">
+
+                <span class="label">
+                    Passport Status
+                </span>
+
+                <b
+                    id="passportStatus"
+                    class="status-text"
+                >
+                    -
+                </b>
+
+                <p id="passportDate">
+                    -
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- KEY INSIGHT -->
+
+        <section class="card key-insight">
+
+            <div class="eyebrow">
+                KEY INSIGHT
+            </div>
+
+            <h3>
+                Ringkasan Kondisi Bisnis
+            </h3>
+
+            <div class="insight-summary">
+
+                <div class="summary-message">
+
+                    <span class="message-label">
+                        Area Terkuat
+                    </span>
+
+                    <p id="strongestMessage">
+                        -
+                    </p>
+
+                </div>
+
+
+                <div class="summary-message">
+
+                    <span class="message-label">
+                        Area Perlu Perhatian
+                    </span>
+
+                    <p id="weakestMessage">
+                        -
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STRENGTHS -->
+
+        <section class="card section">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        BUSINESS STRENGTHS
+                    </div>
+
+                    <h3>
+                        Kekuatan Bisnis
+                    </h3>
+
+                </div>
+
+                <span
+                    id="strengthBadge"
+                    class="count-badge"
+                >
+                    0 Area
+                </span>
+
+            </div>
+
+
+            <div
+                id="strengthList"
+                class="insight-list"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- RISKS -->
+
+        <section class="card section">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        BUSINESS RISKS
+                    </div>
+
+                    <h3>
+                        Risiko dan Perhatian
+                    </h3>
+
+                </div>
+
+                <span
+                    id="riskBadge"
+                    class="count-badge"
+                >
+                    0 Area
+                </span>
+
+            </div>
+
+
+            <div
+                id="riskList"
+                class="insight-list"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- RECOMMENDATION -->
+
+        <section class="card recommendation-card">
+
+            <div class="eyebrow">
+                NEXT STEP
+            </div>
+
+            <h3>
+                Apa yang Perlu Dilakukan?
+            </h3>
+
+            <p id="nextStepMessage">
+                -
+            </p>
+
+        </section>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="navigation-row">
+
+            <button
+                id="trendButton"
+                class="secondary-button"
+                type="button"
+            >
+                ← Trend
+            </button>
+
+
+            <button
+                id="projectionButton"
+                class="primary-button"
+                type="button"
+            >
+                Lihat Projection →
+            </button>
+
+
+        </div>
+
+
+
+    </div>
+
+</main>
+
+
+<script src="insights.js"></script>
+
+</body>
+
+</html>

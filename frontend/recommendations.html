@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Recommendations
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="recommendations.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="page-header">
+
+        <div class="header-inner">
+
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ←
+            </button>
+
+
+            <div class="header-brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Business Recommendations
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="recommendation-container">
+
+
+        <!-- =====================================
+             LOADING
+        ====================================== -->
+
+        <section
+            id="loadingState"
+            class="state-card"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <h2>
+                Memuat rekomendasi...
+            </h2>
+
+            <p>
+                Sedang menganalisis kondisi bisnis kamu.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTENT
+        ====================================== -->
+
+        <div
+            id="recommendationContent"
+            style="display: none;"
+        >
+
+
+            <!-- =================================
+                 PAGE INTRO
+            ================================== -->
+
+            <section class="page-intro">
+
+                <span class="section-label">
+                    BUSINESS RECOMMENDATIONS
+                </span>
+
+                <h2>
+                    Rekomendasi untuk Bisnis Kamu
+                </h2>
+
+                <p>
+                    Rekomendasi dibuat berdasarkan
+                    kondisi Economic Passport dan
+                    score masing-masing aspek bisnis.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 BUSINESS INFO
+            ================================== -->
+
+            <section class="business-card">
+
+                <div>
+
+                    <span>
+                        Bisnis
+                    </span>
+
+                    <strong id="businessName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Business ID
+                    </span>
+
+                    <strong id="businessId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Passport Status
+                    </span>
+
+                    <strong id="passportStatus">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Business Score
+                    </span>
+
+                    <strong id="businessScore">
+                        -
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 SUMMARY
+            ================================== -->
+
+            <section class="summary-section">
+
+                <div class="section-title">
+
+                    <h2>
+                        Ringkasan Rekomendasi
+                    </h2>
+
+                    <p>
+                        Prioritas masalah berdasarkan
+                        kondisi bisnis kamu.
+                    </p>
+
+                </div>
+
+
+                <div class="summary-grid">
+
+
+                    <div class="summary-card">
+
+                        <span>
+                            Total Rekomendasi
+                        </span>
+
+                        <strong
+                            id="totalRecommendations"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-card critical">
+
+                        <span>
+                            Critical
+                        </span>
+
+                        <strong
+                            id="criticalCount"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-card high">
+
+                        <span>
+                            High
+                        </span>
+
+                        <strong
+                            id="highCount"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-card medium">
+
+                        <span>
+                            Medium
+                        </span>
+
+                        <strong
+                            id="mediumCount"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-card low">
+
+                        <span>
+                            Low
+                        </span>
+
+                        <strong
+                            id="lowCount"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 TOP RECOMMENDATION
+            ================================== -->
+
+            <section
+                id="topRecommendationSection"
+                class="top-recommendation-section"
+            >
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        PRIORITAS UTAMA
+                    </span>
+
+                    <h2>
+                        Rekomendasi Utama
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="topRecommendation"
+                    class="top-recommendation-card"
+                >
+
+                    <div class="empty-state">
+
+                        <p>
+                            Memuat rekomendasi utama...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 ALL RECOMMENDATIONS
+            ================================== -->
+
+            <section class="recommendation-section">
+
+                <div class="section-title">
+
+                    <h2>
+                        Semua Rekomendasi
+                    </h2>
+
+                    <p>
+                        Langkah yang dapat dilakukan
+                        berdasarkan kondisi setiap aspek.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="recommendationList"
+                    class="recommendations-list"
+                >
+
+                    <div class="empty-state">
+
+                        <p>
+                            Memuat rekomendasi...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 NEXT STEP
+            ================================== -->
+
+            <section class="next-step">
+
+                <div>
+
+                    <span class="section-label">
+                        NEXT STEP
+                    </span>
+
+                    <h2>
+                        Periksa Kesehatan Bisnis
+                    </h2>
+
+                    <p>
+                        Lihat kondisi setiap aspek bisnis
+                        secara lebih mendalam.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="healthCheckButton"
+                    class="primary-button"
+                >
+                    Health Check →
+                </button>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             ERROR
+        ====================================== -->
+
+        <section
+            id="errorState"
+            class="state-card error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h2>
+                Tidak dapat memuat rekomendasi
+            </h2>
+
+            <p id="errorMessage">
+                Terjadi kesalahan.
+            </p>
+
+
+            <button
+                type="button"
+                id="retryButton"
+                class="primary-button"
+            >
+                Coba Lagi
+            </button>
+
+
+            <button
+                type="button"
+                id="errorBackButton"
+                class="secondary-button"
+            >
+                Kembali ke Dashboard
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="recommendations.js"></script>
+
+</body>
+
+</html>

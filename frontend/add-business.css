@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: #f7f9fc;
+
+    color: #1f2937;
+}
+
+
+.page-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 25px 20px 40px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.back-button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #1f4e79;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.back-button:hover {
+    background: #edf4fa;
+}
+
+
+.page-header h1 {
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+.page-header p {
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.form-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #1f2937;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1f4e79;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 78, 121, 0.1);
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+    min-height: 20px;
+
+    margin-bottom: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #dc2626;
+}
+
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.save-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+
+.save-button:hover {
+    background: #173a5c;
+}
+
+
+.save-button:active {
+    transform: scale(0.98);
+}
+
+
+.save-button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page-container {
+        padding:
+            20px 15px 30px;
+    }
+
+
+    .form-card {
+        padding: 22px 18px;
+    }
+
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+}

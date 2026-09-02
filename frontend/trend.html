@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trend - Economic Passport</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="trend.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+
+        <div class="brand">
+            <div class="brand-icon">EP</div>
+
+            <div>
+                <h1>Economic Passport</h1>
+                <p>Business Intelligence for Better Decisions</p>
+            </div>
+        </div>
+
+        <button id="logoutButton" class="logout">
+            Logout
+        </button>
+
+    </div>
+</header>
+
+
+<main class="container">
+
+    <button id="backButton" class="back">
+        ← Kembali ke Score Comparison
+    </button>
+
+
+    <!-- LOADING -->
+    <section id="loadingState" class="state">
+
+        <div class="spinner"></div>
+
+        <p>
+            Memuat trend score...
+        </p>
+
+    </section>
+
+
+    <!-- ERROR -->
+    <section id="errorState" class="state hidden">
+
+        <div class="error-icon">
+            !
+        </div>
+
+        <h2>
+            Data tidak dapat dimuat
+        </h2>
+
+        <p id="errorMessage">
+            Terjadi kesalahan saat mengambil data trend.
+        </p>
+
+        <div class="actions">
+
+            <button id="retryButton" class="primary">
+                Coba Lagi
+            </button>
+
+            <button id="errorBackButton" class="secondary">
+                Kembali
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENT -->
+    <div id="content" class="hidden">
+
+
+        <!-- TITLE -->
+        <section class="title">
+
+            <div class="eyebrow">
+                SCORE TREND
+            </div>
+
+            <h2 id="businessName">
+                Economic Passport
+            </h2>
+
+            <p>
+                Lihat perkembangan score bisnis dari waktu ke waktu.
+            </p>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+        <section class="summary">
+
+
+            <article class="card stat-card">
+
+                <span class="label">
+                    Score Awal
+                </span>
+
+                <b id="firstScore">
+                    0
+                </b>
+
+                <p>
+                    Assessment pertama
+                </p>
+
+            </article>
+
+
+            <article class="card stat-card">
+
+                <span class="label">
+                    Score Terbaru
+                </span>
+
+                <b id="latestScore">
+                    0
+                </b>
+
+                <p id="latestDate">
+                    Assessment terbaru
+                </p>
+
+            </article>
+
+
+            <article class="card stat-card">
+
+                <span class="label">
+                    Perubahan
+                </span>
+
+                <b id="totalChange">
+                    0
+                </b>
+
+                <p id="changeDescription">
+                    Dari assessment pertama
+                </p>
+
+            </article>
+
+
+            <article class="card stat-card">
+
+                <span class="label">
+                    Rata-rata Score
+                </span>
+
+                <b id="averageScore">
+                    0
+                </b>
+
+                <p>
+                    Seluruh assessment
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- TREND STATUS -->
+        <section class="card trend-status">
+
+            <div class="section-head">
+
+                <div>
+                    <div class="eyebrow">
+                        TREND STATUS
+                    </div>
+
+                    <h3>
+                        Perkembangan Bisnis
+                    </h3>
+                </div>
+
+                <span id="trendBadge" class="trend-badge">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="trend-message">
+
+                <div id="trendIcon" class="trend-icon">
+                    ↑
+                </div>
+
+                <div>
+
+                    <h3 id="trendTitle">
+                        -
+                    </h3>
+
+                    <p id="trendMessage">
+                        -
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHART -->
+        <section class="card section">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        SCORE DEVELOPMENT
+                    </div>
+
+                    <h3>
+                        Perkembangan Score
+                    </h3>
+
+                </div>
+
+                <span class="chart-unit">
+                    Score / 100
+                </span>
+
+            </div>
+
+
+            <div class="chart-wrapper">
+
+                <div class="y-axis">
+
+                    <span>100</span>
+                    <span>80</span>
+                    <span>60</span>
+                    <span>40</span>
+                    <span>20</span>
+                    <span>0</span>
+
+                </div>
+
+
+                <div class="chart-area">
+
+                    <div class="grid-line line-100"></div>
+                    <div class="grid-line line-80"></div>
+                    <div class="grid-line line-60"></div>
+                    <div class="grid-line line-40"></div>
+                    <div class="grid-line line-20"></div>
+                    <div class="grid-line line-0"></div>
+
+
+                    <svg
+                        id="trendChart"
+                        class="trend-chart"
+                        viewBox="0 0 1000 400"
+                        preserveAspectRatio="none"
+                    >
+                    </svg>
+
+
+                    <div id="chartPoints" class="chart-points"></div>
+
+                </div>
+
+            </div>
+
+
+            <div id="chartLabels" class="chart-labels"></div>
+
+        </section>
+
+
+        <!-- ASSESSMENT TIMELINE -->
+        <section class="card section">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        ASSESSMENT HISTORY
+                    </div>
+
+                    <h3>
+                        Timeline Assessment
+                    </h3>
+
+                </div>
+
+                <span id="assessmentCount" class="assessment-count">
+                    0 Assessment
+                </span>
+
+            </div>
+
+
+            <div id="timeline" class="timeline"></div>
+
+        </section>
+
+
+        <!-- TREND INSIGHT -->
+        <section class="card insight-card">
+
+            <div class="eyebrow">
+                TREND INSIGHT
+            </div>
+
+            <h3 id="insightTitle">
+                -
+            </h3>
+
+            <p id="insightDescription">
+                -
+            </p>
+
+        </section>
+
+
+        <!-- NAVIGATION -->
+        <div class="navigation-row">
+
+            <button
+                type="button"
+                id="comparisonButton"
+                class="secondary-button"
+            >
+                ← Score Comparison
+            </button>
+
+            <button
+                type="button"
+                id="insightsButton"
+                class="primary-button"
+            >
+                Lihat Insights →
+            </button>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<script src="trend.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Status Summary
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="status-summary.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="top-header">
+
+        <div class="header-inner">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Business Status Summary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="page-container">
+
+
+        <!-- BACK -->
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+        >
+            ← Kembali
+        </button>
+
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <section
+            class="loading-state"
+            id="loadingState"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat status bisnis...
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <section
+            class="error-state"
+            id="errorState"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <h3>
+                Data Status Tidak Dapat Dimuat
+            </h3>
+
+            <p id="errorMessage">
+                Terjadi kesalahan saat mengambil data.
+            </p>
+
+            <button
+                type="button"
+                class="retry-button"
+                id="retryButton"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div
+            id="summaryContent"
+            style="display: none;"
+        >
+
+
+            <!-- =================================================
+                 PAGE HEADING
+            ================================================== -->
+
+            <section class="page-heading">
+
+                <span class="eyebrow">
+                    BUSINESS STATUS
+                </span>
+
+                <h2>
+                    Status Bisnis
+                </h2>
+
+                <p>
+                    Ringkasan kondisi Economic Passport
+                    berdasarkan penilaian bisnis kamu.
+                </p>
+
+                <div
+                    class="business-name"
+                    id="businessName"
+                >
+                    -
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PASSPORT STATUS
+            ================================================== -->
+
+            <section class="status-card">
+
+
+                <div class="status-card-top">
+
+
+                    <div class="status-main">
+
+                        <span class="status-label">
+                            Current Passport Level
+                        </span>
+
+                        <h3
+                            class="level"
+                            id="passportLevel"
+                        >
+                            -
+                        </h3>
+
+                        <p
+                            class="status-description"
+                            id="statusDescription"
+                        >
+                            -
+                        </p>
+
+                    </div>
+
+
+                    <div class="score-circle">
+
+                        <strong id="overallScore">
+                            -
+                        </strong>
+
+                        <span>
+                            Overall Score
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PASSPORT INFO -->
+
+                <div class="passport-info">
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Passport ID
+                        </span>
+
+                        <strong id="passportId">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Assessment Date
+                        </span>
+
+                        <strong id="createdAt">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Passport Status
+                        </span>
+
+                        <strong id="passportStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Overall Status
+                        </span>
+
+                        <strong id="overallStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VERIFICATION
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        VERIFICATION
+                    </span>
+
+                    <h3>
+                        Passport Verification
+                    </h3>
+
+                    <p>
+                        Status validasi dan masa berlaku
+                        passport bisnis.
+                    </p>
+
+                </div>
+
+
+
+                <div class="info-grid verification-grid">
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Verification Status
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="verificationStatus"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Passport Age
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="verificationAge"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="card-label">
+                            Remaining Validity
+                        </span>
+
+                        <strong
+                            class="card-value"
+                            id="remainingDays"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TREND
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        SCORE TREND
+                    </span>
+
+                    <h3>
+                        Perkembangan Score
+                    </h3>
+
+                    <p>
+                        Perbandingan score assessment
+                        terakhir dengan assessment sebelumnya.
+                    </p>
+
+                </div>
+
+
+
+                <div class="trend-card">
+
+
+                    <div class="trend-item">
+
+                        <span>
+                            Current Score
+                        </span>
+
+                        <strong id="currentScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="trend-divider">
+                        →
+                    </div>
+
+
+                    <div class="trend-item">
+
+                        <span>
+                            Previous Score
+                        </span>
+
+                        <strong id="previousScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="trend-change">
+
+                        <span>
+                            Perubahan
+                        </span>
+
+                        <strong id="scoreChange">
+                            -
+                        </strong>
+
+                        <small id="trendDirection">
+                            -
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PERFORMANCE
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        PERFORMANCE
+                    </span>
+
+                    <h3>
+                        Performa Bisnis
+                    </h3>
+
+                    <p>
+                        Area bisnis yang membutuhkan
+                        perhatian berdasarkan score saat ini.
+                    </p>
+
+                </div>
+
+
+
+                <div class="performance-grid">
+
+
+                    <div class="performance-card">
+
+                        <span class="card-label">
+                            Area Terlemah
+                        </span>
+
+                        <strong
+                            class="performance-category"
+                            id="weakestCategory"
+                        >
+                            -
+                        </strong>
+
+                        <div class="performance-score">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong id="weakestScore">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <p>
+                            Area dengan score paling rendah
+                            dibandingkan area bisnis lainnya.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="performance-card">
+
+                        <span class="card-label">
+                            Action Required
+                        </span>
+
+                        <strong
+                            class="performance-number"
+                            id="actionRequired"
+                        >
+                            0
+                        </strong>
+
+                        <p>
+                            Jumlah area yang membutuhkan
+                            tindakan perbaikan.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <section class="navigation-section">
+
+
+                <div class="navigation-header">
+
+                    <span class="eyebrow">
+                        NEXT STEP
+                    </span>
+
+                    <h3>
+                        Lanjutkan Analisis Bisnis
+                    </h3>
+
+                    <p>
+                        Akses fitur lain berdasarkan
+                        kondisi Economic Passport.
+                    </p>
+
+                </div>
+
+
+
+                <div class="navigation-buttons">
+
+
+                    <button
+                        type="button"
+                        class="nav-button primary"
+                        id="actionPlanButton"
+                    >
+                        Action Plan
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="progressButton"
+                    >
+                        Action Plan Progress
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="verificationButton"
+                    >
+                        Verification Summary
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="finalSummaryButton"
+                    >
+                        Final Summary
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="status-summary.js"></script>
+
+
+</body>
+
+</html>

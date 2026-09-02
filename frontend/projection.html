@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projection - Economic Passport</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="projection.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                EP
+            </div>
+
+            <div>
+                <h1>Economic Passport</h1>
+                <p>Business Intelligence for Better Decisions</p>
+            </div>
+
+        </div>
+
+        <button
+            id="logoutButton"
+            class="logout"
+            type="button"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- BACK -->
+
+    <button
+        id="backButton"
+        class="back"
+        type="button"
+    >
+        ← Kembali ke Insights
+    </button>
+
+
+    <!-- LOADING -->
+
+    <section
+        id="loadingState"
+        class="state"
+    >
+
+        <div class="spinner"></div>
+
+        <p>
+            Memuat score projection...
+        </p>
+
+    </section>
+
+
+    <!-- ERROR -->
+
+    <section
+        id="errorState"
+        class="state hidden"
+    >
+
+        <div class="error-icon">
+            !
+        </div>
+
+        <h2>
+            Data tidak dapat dimuat
+        </h2>
+
+        <p id="errorMessage">
+            Terjadi kesalahan saat mengambil data projection.
+        </p>
+
+        <div class="actions">
+
+            <button
+                id="retryButton"
+                class="primary"
+                type="button"
+            >
+                Coba Lagi
+            </button>
+
+            <button
+                id="errorBackButton"
+                class="secondary"
+                type="button"
+            >
+                Kembali
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <div
+        id="content"
+        class="hidden"
+    >
+
+        <!-- TITLE -->
+
+        <section class="title">
+
+            <div class="eyebrow">
+                SCORE PROJECTION
+            </div>
+
+            <h2 id="businessName">
+                Economic Passport
+            </h2>
+
+            <p>
+                Lihat perkiraan perkembangan business score berdasarkan riwayat assessment.
+            </p>
+
+        </section>
+
+
+        <!-- MAIN PROJECTION -->
+
+        <section class="card projection-card">
+
+            <div class="projection-info">
+
+                <span class="label">
+                    Projected Business Score
+                </span>
+
+                <div class="projected-score">
+
+                    <b id="projectedScore">
+                        0.00
+                    </b>
+
+                    <small>
+                        / 100
+                    </small>
+
+                </div>
+
+                <span
+                    id="projectedLevel"
+                    class="badge"
+                >
+                    -
+                </span>
+
+                <p id="projectionDescription">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="projection-visual">
+
+                <div class="score-ring">
+
+                    <div class="ring-inner">
+
+                        <span>
+                            Proyeksi
+                        </span>
+
+                        <b id="ringScore">
+                            0
+                        </b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCORE COMPARISON -->
+
+        <section class="summary">
+
+            <article class="card stat">
+
+                <span class="label">
+                    Current Score
+                </span>
+
+                <b id="currentScore">
+                    0.00
+                </b>
+
+                <p id="assessmentDate">
+                    -
+                </p>
+
+            </article>
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Average Change
+                </span>
+
+                <b id="averageChange">
+                    0.00
+                </b>
+
+                <p>
+                    Per assessment
+                </p>
+
+            </article>
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Trend
+                </span>
+
+                <b id="trend">
+                    -
+                </b>
+
+                <p id="trendDescription">
+                    -
+                </p>
+
+            </article>
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Assessment
+                </span>
+
+                <b id="assessmentCount">
+                    0
+                </b>
+
+                <p>
+                    Total assessment
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- TARGET -->
+
+        <section class="card target-card">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        TARGET
+                    </div>
+
+                    <h3>
+                        Target Score
+                    </h3>
+
+                </div>
+
+                <span
+                    id="targetScore"
+                    class="target-number"
+                >
+                    80
+                </span>
+
+            </div>
+
+
+            <div class="target-progress">
+
+                <div
+                    id="targetProgress"
+                    class="target-progress-bar"
+                ></div>
+
+            </div>
+
+
+            <div class="target-info">
+
+                <span>
+                    Current / Projected
+                </span>
+
+                <b id="gapToTarget">
+                    -
+                </b>
+
+            </div>
+
+        </section>
+
+
+        <!-- CURRENT VS PROJECTED -->
+
+        <section class="card section">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        SCORE OUTLOOK
+                    </div>
+
+                    <h3>
+                        Current vs Projected
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="comparison">
+
+                <div class="comparison-item">
+
+                    <div class="comparison-top">
+
+                        <span>
+                            Current Score
+                        </span>
+
+                        <b id="currentBarScore">
+                            0
+                        </b>
+
+                    </div>
+
+                    <div class="bar">
+
+                        <div
+                            id="currentBar"
+                            class="bar-fill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="comparison-item">
+
+                    <div class="comparison-top">
+
+                        <span>
+                            Projected Score
+                        </span>
+
+                        <b id="projectedBarScore">
+                            0
+                        </b>
+
+                    </div>
+
+                    <div class="bar">
+
+                        <div
+                            id="projectedBar"
+                            class="bar-fill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- METHOD -->
+
+        <section class="card method-card">
+
+            <div class="eyebrow">
+                PROJECTION METHOD
+            </div>
+
+            <h3>
+                Bagaimana Proyeksi Dihitung?
+            </h3>
+
+            <p id="methodDescription">
+                -
+            </p>
+
+            <div class="method-info">
+
+                <div>
+
+                    <span>
+                        Jumlah Assessment
+                    </span>
+
+                    <b id="methodAssessmentCount">
+                        0
+                    </b>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Perubahan Rata-rata
+                    </span>
+
+                    <b id="methodAverageChange">
+                        0
+                    </b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+
+        <section
+            id="limitedProjection"
+            class="card notice-card hidden"
+        >
+
+            <div class="notice-icon">
+                i
+            </div>
+
+            <div>
+
+                <h3>
+                    Projection Belum Tersedia
+                </h3>
+
+                <p id="limitedProjectionMessage">
+                    -
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="navigation-row">
+
+            <button
+                id="insightsButton"
+                class="secondary-button"
+                type="button"
+            >
+                ← Insights
+            </button>
+
+
+            <button
+                id="improvementButton"
+                class="primary-button"
+                type="button"
+            >
+                Lihat Improvement Priorities →
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="projection.js"></script>
+
+</body>
+
+</html>

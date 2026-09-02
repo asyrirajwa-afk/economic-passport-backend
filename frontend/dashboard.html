@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Economic Passport - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="header-inner">
+
+            <div class="brand-small">
+
+                <div class="brand-icon-small">
+                    EP
+                </div>
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Business Intelligence for Better Decisions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- =====================================
+             WELCOME
+        ====================================== -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <h2 id="welcome">
+                    Memuat data...
+                </h2>
+
+                <p>
+                    Kelola bisnis dan pantau kondisi
+                    ekonomi usahamu.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addBusinessButton"
+                class="add-business-button"
+            >
+                + Tambah Bisnis
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section class="statistics-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    B
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Bisnis
+                    </span>
+
+                    <strong id="totalBusiness">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    P
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Passport Aktif
+                    </span>
+
+                    <strong id="activePassport">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    S
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Rata-rata Score
+                    </span>
+
+                    <strong id="averageScore">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             RINGKASAN BISNIS
+        ====================================== -->
+
+        <section
+            id="businessOverview"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Ringkasan Bisnis
+                    </h2>
+
+                    <p>
+                        Kondisi terkini bisnis yang dipilih.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+
+                <div class="overview-business">
+
+                    <div>
+
+                        <span>
+                            Bisnis Aktif
+                        </span>
+
+                        <h3 id="dashboardBusinessName">
+                            -
+                        </h3>
+
+                        <p id="dashboardBusinessCategory">
+                            -
+                        </p>
+
+                    </div>
+
+
+                    <div class="business-status">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="passportStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="score-overview">
+
+                    <div class="main-score">
+
+                        <span>
+                            Economic Passport Score
+                        </span>
+
+                        <strong id="passportScore">
+                            -
+                        </strong>
+
+                        <small>
+                            / 100
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        id="scoreTrend"
+                        class="score-trend"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+
+
+                <div class="score-grid">
+
+
+                    <div class="score-item">
+
+                        <span>
+                            Profit Score
+                        </span>
+
+                        <strong id="profitScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-item">
+
+                        <span>
+                            People Score
+                        </span>
+
+                        <strong id="peopleScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-item">
+
+                        <span>
+                            Planet Score
+                        </span>
+
+                        <strong id="planetScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-item">
+
+                        <span>
+                            Marketplace Health
+                        </span>
+
+                        <strong id="marketplaceHealthScore">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             KONDISI KEUANGAN
+        ====================================== -->
+
+        <section
+            id="financialSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Kondisi Keuangan
+                    </h2>
+
+                    <p>
+                        Ringkasan kondisi finansial bisnis aktif.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="financial-grid">
+
+
+                <div class="financial-card">
+
+                    <span>
+                        Omzet Bulanan
+                    </span>
+
+                    <strong id="monthlyRevenue">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <div class="financial-card">
+
+                    <span>
+                        HPP / COGS
+                    </span>
+
+                    <strong id="cogs">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <div class="financial-card">
+
+                    <span>
+                        Biaya Operasional
+                    </span>
+
+                    <strong id="operatingExpenses">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <div class="financial-card">
+
+                    <span>
+                        Estimasi Profit
+                    </span>
+
+                    <strong id="estimatedProfit">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <div class="financial-card">
+
+                    <span>
+                        Margin
+                    </span>
+
+                    <strong id="estimatedMargin">
+                        -
+                    </strong>
+
+                </div>
+
+
+
+                <div class="financial-card">
+
+                    <span>
+                        Target Profit
+                    </span>
+
+                    <strong id="targetProfit">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SCORE HISTORY
+        ====================================== -->
+
+        <section
+            id="scoreHistorySection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading score-history-heading">
+
+                <div>
+
+                    <h2>
+                        Perkembangan Score
+                    </h2>
+
+                    <p>
+                        Riwayat perubahan Economic Passport.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="scoreHistoryButton"
+                    class="score-history-button"
+                >
+                    Lihat Riwayat →
+                </button>
+
+            </div>
+
+
+            <div
+                id="scoreHistory"
+                class="score-history"
+            >
+
+                <div class="loading-state">
+                    Memuat riwayat score...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MARKETPLACE RECOMMENDATION
+        ====================================== -->
+
+        <section
+            id="recommendationSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Rekomendasi Marketplace
+                    </h2>
+
+                    <p>
+                        Marketplace yang paling sesuai
+                        dengan kondisi bisnis.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="viewMarketplaceButton"
+                    class="secondary-button"
+                >
+                    Lihat Detail
+                </button>
+
+            </div>
+
+
+            <div
+                id="recommendationList"
+                class="recommendation-list"
+            >
+
+                <div class="loading-state">
+                    Memuat rekomendasi marketplace...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BUSINESS HEALTH CHECK
+        ====================================== -->
+
+        <section
+            id="healthSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Business Health Check
+                    </h2>
+
+                    <p>
+                        Pemeriksaan kondisi bisnis secara menyeluruh.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="healthCheck"
+                class="health-check"
+            >
+
+                <div class="loading-state">
+                    Memeriksa kondisi bisnis...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BUSINESS ALERTS
+        ====================================== -->
+
+        <section
+            id="alertsSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Business Alerts
+                    </h2>
+
+                    <p>
+                        Hal yang perlu diperhatikan dari bisnis kamu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="alertsList"
+                class="alerts-list"
+            >
+
+                <div class="loading-state">
+                    Memuat alerts...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ACTION PLAN
+        ====================================== -->
+
+        <section
+            id="actionPlanSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Action Plan
+                    </h2>
+
+                    <p>
+                        Rekomendasi tindakan untuk meningkatkan
+                        kondisi bisnis.
+                    </p>
+
+                </div>
+
+
+                <!-- TOMBOL ACTION PLAN -->
+
+                <div
+                    class="action-plan-buttons"
+                    style="
+                        display: flex;
+                        gap: 10px;
+                        flex-wrap: wrap;
+                    "
+                >
+
+                    <button
+                        type="button"
+                        id="actionPlanButton"
+                        class="secondary-button"
+                    >
+                        Lihat Action Plan →
+                    </button>
+
+
+                    <!-- =================================
+                         TOMBOL ACTION PLAN PROGRESS
+                    ================================== -->
+
+                    <button
+                        type="button"
+                        id="actionPlanProgressButton"
+                        class="secondary-button"
+                    >
+                        Action Plan Progress →
+                    </button>
+
+                    <button
+                        type="button"
+                        id="statusSummaryButton"
+                        class="secondary-button"
+                    >
+                        Status Summary →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="actionPlan"
+                class="action-plan"
+            >
+
+                <div class="loading-state">
+                    Memuat action plan...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BISNIS SAYA
+        ====================================== -->
+
+        <section
+            id="businessSection"
+            class="business-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Bisnis Saya
+                    </h2>
+
+                    <p>
+                        Kelola dan pantau seluruh bisnis kamu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="businessList"
+                class="business-list"
+            >
+
+                <div class="loading-state">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Memuat bisnis...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GLOBAL ERROR
+        ====================================== -->
+
+        <div
+            id="dashboardError"
+            class="dashboard-error"
+            style="display: none;"
+        >
+
+            <strong>
+                Terjadi kesalahan
+            </strong>
+
+            <p id="dashboardErrorMessage">
+                Gagal memuat data dashboard.
+            </p>
+
+
+            <button
+                type="button"
+                id="retryDashboard"
+                class="secondary-button"
+            >
+                Coba Lagi
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT DASHBOARD
+    ========================================== -->
+
+    <script src="dashboard.js"></script>
+
+
+
+    <!-- =========================================
+         ACTION PLAN NAVIGATION
+    ========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =====================================
+                   ACTION PLAN
+                ====================================== */
+
+                const actionPlanButton =
+                    document.getElementById(
+                        "actionPlanButton"
+                    );
+
+
+                if (actionPlanButton) {
+
+                    actionPlanButton.addEventListener(
+                        "click",
+                        function () {
+
+
+                            const urlParams =
+                                new URLSearchParams(
+                                    window.location.search
+                                );
+
+
+                            const urlBusinessId =
+                                urlParams.get(
+                                    "business_id"
+                                );
+
+
+                            const selectedBusinessId =
+                                localStorage.getItem(
+                                    "selected_business_id"
+                                );
+
+
+                            const lastBusinessId =
+                                localStorage.getItem(
+                                    "last_business_id"
+                                );
+
+
+                            const businessId =
+                                urlBusinessId ||
+                                selectedBusinessId ||
+                                lastBusinessId;
+
+
+                            console.log(
+                                "ACTION PLAN BUTTON - BUSINESS ID:",
+                                businessId
+                            );
+
+
+                            if (!businessId) {
+
+                                alert(
+                                    "Business ID tidak ditemukan. Silakan pilih bisnis terlebih dahulu."
+                                );
+
+                                return;
+
+                            }
+
+
+                            localStorage.setItem(
+                                "selected_business_id",
+                                String(
+                                    businessId
+                                )
+                            );
+
+
+                            localStorage.setItem(
+                                "last_business_id",
+                                String(
+                                    businessId
+                                )
+                            );
+
+
+                            window.location.href =
+                                "action-plan.html?business_id=" +
+                                encodeURIComponent(
+                                    businessId
+                                );
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =====================================
+                   ACTION PLAN PROGRESS
+                ====================================== */
+
+                const actionPlanProgressButton =
+                    document.getElementById(
+                        "actionPlanProgressButton"
+                    );
+
+
+                if (
+                    actionPlanProgressButton
+                ) {
+
+                    actionPlanProgressButton.addEventListener(
+                        "click",
+                        function () {
+
+
+                            const urlParams =
+                                new URLSearchParams(
+                                    window.location.search
+                                );
+
+
+                            const urlBusinessId =
+                                urlParams.get(
+                                    "business_id"
+                                );
+
+
+                            const selectedBusinessId =
+                                localStorage.getItem(
+                                    "selected_business_id"
+                                );
+
+
+                            const lastBusinessId =
+                                localStorage.getItem(
+                                    "last_business_id"
+                                );
+
+
+                            const businessId =
+                                urlBusinessId ||
+                                selectedBusinessId ||
+                                lastBusinessId;
+
+
+                            console.log(
+                                "ACTION PLAN PROGRESS - BUSINESS ID:",
+                                businessId
+                            );
+
+
+                            if (!businessId) {
+
+                                alert(
+                                    "Business ID tidak ditemukan. Silakan pilih bisnis terlebih dahulu."
+                                );
+
+                                return;
+
+                            }
+
+
+                            localStorage.setItem(
+                                "selected_business_id",
+                                String(
+                                    businessId
+                                )
+                            );
+
+
+                            localStorage.setItem(
+                                "last_business_id",
+                                String(
+                                    businessId
+                                )
+                            );
+
+
+                            window.location.href =
+                                "action-plan-progress.html?business_id=" +
+                                encodeURIComponent(
+                                    businessId
+                                );
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

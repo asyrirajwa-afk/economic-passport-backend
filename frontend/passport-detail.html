@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Passport Detail
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="passport-detail.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="top-header">
+
+        <div class="header-inner">
+
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+
+                <div class="brand-text">
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Passport Detail
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="page-container">
+
+
+        <!-- =================================================
+             BACK
+        ================================================== -->
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+        >
+            ← Kembali
+        </button>
+
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <section
+            id="loadingState"
+            class="loading-state"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat detail Economic Passport...
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR
+        ================================================== -->
+
+        <section
+            id="errorState"
+            class="error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+
+            <h3>
+                Passport Tidak Dapat Dimuat
+            </h3>
+
+
+            <p id="errorMessage">
+                Data Economic Passport tidak tersedia.
+            </p>
+
+
+            <button
+                type="button"
+                class="retry-button"
+                id="retryButton"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div
+            id="passportContent"
+            style="display: none;"
+        >
+
+
+            <!-- =================================================
+                 TITLE
+            ================================================== -->
+
+            <section class="page-heading">
+
+                <span class="eyebrow">
+                    ECONOMIC PASSPORT
+                </span>
+
+
+                <h2>
+                    Passport Detail
+                </h2>
+
+
+                <p>
+                    Detail lengkap hasil penilaian Economic Passport bisnis kamu.
+                </p>
+
+
+                <div
+                    class="business-name"
+                    id="businessName"
+                >
+                    -
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN PASSPORT CARD
+            ================================================== -->
+
+            <section class="passport-card">
+
+
+                <div class="passport-card-top">
+
+
+                    <div class="passport-info">
+
+
+                        <span class="passport-label">
+                            ECONOMIC PASSPORT
+                        </span>
+
+
+                        <h3 id="passportBusinessName">
+                            -
+                        </h3>
+
+
+                        <p>
+                            Passport ID:
+                            <strong id="passportId">
+                                -
+                            </strong>
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="score-container">
+
+
+                        <span>
+                            Overall Score
+                        </span>
+
+
+                        <strong id="overallScore">
+                            -
+                        </strong>
+
+
+                        <small>
+                            / 100
+                        </small>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="passport-status-row">
+
+
+                    <div class="status-item">
+
+                        <span>
+                            Level
+                        </span>
+
+                        <strong
+                            id="passportLevel"
+                            class="status-badge"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-item">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="passportStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-item">
+
+                        <span>
+                            Assessment Date
+                        </span>
+
+                        <strong id="createdAt">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TARGET
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        TARGET
+                    </span>
+
+
+                    <h3>
+                        Target Passport
+                    </h3>
+
+
+                    <p>
+                        Status pencapaian target minimum Economic Passport.
+                    </p>
+
+                </div>
+
+
+
+                <div class="target-card">
+
+
+                    <div class="target-main">
+
+                        <span>
+                            Target Score
+                        </span>
+
+
+                        <strong id="targetScore">
+                            -
+                        </strong>
+
+
+                        <small>
+                            / 100
+                        </small>
+
+                    </div>
+
+
+
+                    <div
+                        class="target-status"
+                        id="targetStatus"
+                    >
+                        -
+                    </div>
+
+
+
+                    <div class="target-gap">
+
+                        <span>
+                            Gap
+                        </span>
+
+
+                        <strong id="targetGap">
+                            -
+                        </strong>
+
+
+                        <small>
+                            poin
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CATEGORY PERFORMANCE
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        CATEGORY PERFORMANCE
+                    </span>
+
+
+                    <h3>
+                        Performa Setiap Area
+                    </h3>
+
+
+                    <p>
+                        Perbandingan score setiap kategori dengan target minimum 80.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-list"
+                    id="categoryList"
+                >
+
+
+                    <!-- PROFIT -->
+
+                    <div
+                        class="category-card"
+                        id="profitCard"
+                    >
+
+                        <div class="category-top">
+
+                            <div>
+
+                                <h4>
+                                    Profit
+                                </h4>
+
+                                <span>
+                                    Profitabilitas bisnis
+                                </span>
+
+                            </div>
+
+
+                            <strong
+                                id="profitScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                id="profitProgress"
+                                class="category-progress-fill"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-bottom">
+
+                            <span>
+                                Target 80
+                            </span>
+
+
+                            <strong
+                                id="profitStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PEOPLE -->
+
+                    <div
+                        class="category-card"
+                        id="peopleCard"
+                    >
+
+                        <div class="category-top">
+
+                            <div>
+
+                                <h4>
+                                    People
+                                </h4>
+
+                                <span>
+                                    Aspek sosial dan tenaga kerja
+                                </span>
+
+                            </div>
+
+
+                            <strong
+                                id="peopleScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                id="peopleProgress"
+                                class="category-progress-fill"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-bottom">
+
+                            <span>
+                                Target 80
+                            </span>
+
+
+                            <strong
+                                id="peopleStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PLANET -->
+
+                    <div
+                        class="category-card"
+                        id="planetCard"
+                    >
+
+                        <div class="category-top">
+
+                            <div>
+
+                                <h4>
+                                    Planet
+                                </h4>
+
+                                <span>
+                                    Dampak lingkungan bisnis
+                                </span>
+
+                            </div>
+
+
+                            <strong
+                                id="planetScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                id="planetProgress"
+                                class="category-progress-fill"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-bottom">
+
+                            <span>
+                                Target 80
+                            </span>
+
+
+                            <strong
+                                id="planetStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MARKETPLACE -->
+
+                    <div
+                        class="category-card"
+                        id="marketplaceCard"
+                    >
+
+                        <div class="category-top">
+
+                            <div>
+
+                                <h4>
+                                    Marketplace
+                                </h4>
+
+                                <span>
+                                    Kesehatan penggunaan marketplace
+                                </span>
+
+                            </div>
+
+
+                            <strong
+                                id="marketplaceScore"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="category-progress">
+
+                            <div
+                                id="marketplaceProgress"
+                                class="category-progress-fill"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="category-bottom">
+
+                            <span>
+                                Target 80
+                            </span>
+
+
+                            <strong
+                                id="marketplaceStatus"
+                            >
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 HIGHLIGHTS
+            ================================================== -->
+
+            <section class="section-block">
+
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        HIGHLIGHTS
+                    </span>
+
+
+                    <h3>
+                        Highlight Performa
+                    </h3>
+
+
+                    <p>
+                        Kategori dengan score tertinggi dan terendah.
+                    </p>
+
+                </div>
+
+
+
+                <div class="highlight-grid">
+
+
+                    <!-- STRONGEST -->
+
+                    <div class="highlight-card strongest">
+
+                        <span class="highlight-label">
+                            AREA TERKUAT
+                        </span>
+
+
+                        <h4 id="strongestCategory">
+                            -
+                        </h4>
+
+
+                        <div class="highlight-score">
+
+                            <strong id="strongestScore">
+                                -
+                            </strong>
+
+                            <span>
+                                / 100
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Kategori dengan score tertinggi pada assessment terakhir.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- WEAKEST -->
+
+                    <div class="highlight-card weakest">
+
+                        <span class="highlight-label">
+                            AREA TERLEMAH
+                        </span>
+
+
+                        <h4 id="weakestCategory">
+                            -
+                        </h4>
+
+
+                        <div class="highlight-score">
+
+                            <strong id="weakestScore">
+                                -
+                            </strong>
+
+                            <span>
+                                / 100
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Kategori dengan score terendah pada assessment terakhir.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PASSPORT SUMMARY
+            ================================================== -->
+
+            <section class="summary-card">
+
+
+                <div class="summary-header">
+
+                    <span class="eyebrow">
+                        PASSPORT SUMMARY
+                    </span>
+
+
+                    <h3>
+                        Ringkasan Passport
+                    </h3>
+
+                </div>
+
+
+
+                <div class="summary-content">
+
+                    <p id="summaryText">
+                        -
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <section class="navigation-section">
+
+
+                <div class="navigation-header">
+
+                    <span class="eyebrow">
+                        NEXT STEP
+                    </span>
+
+
+                    <h3>
+                        Lanjutkan Analisis Bisnis
+                    </h3>
+
+
+                    <p>
+                        Akses fitur lain untuk melihat perkembangan dan kondisi bisnis secara lebih detail.
+                    </p>
+
+                </div>
+
+
+
+                <div class="navigation-buttons">
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="dashboardButton"
+                    >
+                        Dashboard
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="scoreBreakdownButton"
+                    >
+                        Score Breakdown
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="nav-button"
+                        id="verificationButton"
+                    >
+                        Verification
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="passport-detail.js"
+    ></script>
+
+
+</body>
+
+</html>

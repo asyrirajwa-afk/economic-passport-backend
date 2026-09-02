@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Action Plan Progress
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="action-plan-progress.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="progress-header">
+
+        <div class="header-inner">
+
+
+            <!-- BACK BUTTON -->
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ←
+            </button>
+
+
+            <!-- BRAND -->
+
+            <div class="header-brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Action Plan Progress
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="progress-container">
+
+
+        <!-- =================================================
+             LOADING STATE
+        ================================================== -->
+
+        <section
+            id="loadingState"
+            class="state-card"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Memuat perkembangan Action Plan...
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR STATE
+        ================================================== -->
+
+        <section
+            id="errorState"
+            class="state-card error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+
+            <h2>
+                Data Progress Tidak Dapat Dimuat
+            </h2>
+
+
+            <p id="errorMessage">
+                Terjadi kesalahan saat mengambil data.
+            </p>
+
+
+            <div class="error-actions">
+
+                <button
+                    type="button"
+                    id="retryButton"
+                    class="primary-button"
+                >
+                    Coba Lagi
+                </button>
+
+
+                <button
+                    type="button"
+                    id="errorBackButton"
+                    class="secondary-button"
+                >
+                    Kembali
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <div
+            id="progressContent"
+            style="display: none;"
+        >
+
+
+            <!-- =================================================
+                 PAGE INTRO
+            ================================================== -->
+
+            <section class="page-intro">
+
+                <span class="section-label">
+                    ACTION PLAN PROGRESS
+                </span>
+
+
+                <h2 id="businessName">
+                    -
+                </h2>
+
+
+                <p>
+                    Pantau perubahan kondisi bisnis
+                    setelah Action Plan dijalankan.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ASSESSMENT COMPARISON
+            ================================================== -->
+
+            <section class="assessment-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ASSESSMENT COMPARISON
+                        </span>
+
+
+                        <h2>
+                            Perbandingan Assessment
+                        </h2>
+
+
+                        <p>
+                            Membandingkan assessment sebelumnya
+                            dengan assessment terbaru.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="assessment-grid">
+
+
+                    <!-- PREVIOUS -->
+
+                    <div class="assessment-card">
+
+                        <span>
+                            Assessment Sebelumnya
+                        </span>
+
+
+                        <strong id="previousScore">
+                            -
+                        </strong>
+
+
+                        <small id="previousDate">
+                            -
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- CURRENT -->
+
+                    <div class="assessment-card current">
+
+                        <span>
+                            Assessment Terbaru
+                        </span>
+
+
+                        <strong id="currentScore">
+                            -
+                        </strong>
+
+
+                        <small id="currentDate">
+                            -
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- CHANGE -->
+
+                    <div class="assessment-card change">
+
+                        <span>
+                            Perubahan Score
+                        </span>
+
+
+                        <strong id="scoreChange">
+                            -
+                        </strong>
+
+
+                        <small id="scoreChangeStatus">
+                            -
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 OVERALL PROGRESS
+            ================================================== -->
+
+            <section class="overall-progress-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            OVERALL PROGRESS
+                        </span>
+
+
+                        <h2>
+                            Perkembangan Bisnis
+                        </h2>
+
+
+                        <p id="overallMessage">
+                            -
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="overall-progress-card">
+
+
+                    <div class="overall-score-block">
+
+                        <span>
+                            Score Terbaru
+                        </span>
+
+
+                        <strong id="overallCurrentScore">
+                            -
+                        </strong>
+
+
+                        <small>
+                            / 100
+                        </small>
+
+                    </div>
+
+
+                    <div class="overall-arrow">
+                        →
+                    </div>
+
+
+                    <div class="overall-score-block">
+
+                        <span>
+                            Perubahan
+                        </span>
+
+
+                        <strong id="overallChange">
+                            -
+                        </strong>
+
+
+                        <small id="overallChangeLabel">
+                            -
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CATEGORY PROGRESS
+            ================================================== -->
+
+            <section class="category-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            CATEGORY PROGRESS
+                        </span>
+
+
+                        <h2>
+                            Perkembangan Setiap Area
+                        </h2>
+
+
+                        <p>
+                            Perubahan score berdasarkan
+                            masing-masing area bisnis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    id="categoryProgressList"
+                    class="category-progress-list"
+                >
+
+                    <!--
+                        Data kategori akan dibuat
+                        menggunakan JavaScript.
+                    -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTION PLAN RESULT
+            ================================================== -->
+
+            <section class="result-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ACTION PLAN RESULT
+                        </span>
+
+
+                        <h2>
+                            Hasil Pelaksanaan Action Plan
+                        </h2>
+
+
+                        <p>
+                            Ringkasan apakah kondisi setiap
+                            area mengalami peningkatan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    id="resultList"
+                    class="result-list"
+                >
+
+                    <!--
+                        Result dibuat oleh JavaScript.
+                    -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NEXT STEP
+            ================================================== -->
+
+            <section class="next-step-section">
+
+
+                <div>
+
+                    <span class="section-label">
+                        NEXT STEP
+                    </span>
+
+
+                    <h2>
+                        Lanjutkan Pemantauan Bisnis
+                    </h2>
+
+
+                    <p>
+                        Gunakan hasil progress ini untuk
+                        menentukan tindakan berikutnya.
+                    </p>
+
+                </div>
+
+
+                <div class="next-step-buttons">
+
+
+                    <button
+                        type="button"
+                        id="actionPlanButton"
+                        class="primary-button"
+                    >
+                        Lihat Action Plan →
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="scoreHistoryButton"
+                        class="secondary-button"
+                    >
+                        Lihat Score History →
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="action-plan-progress.js"></script>
+
+
+</body>
+
+</html>

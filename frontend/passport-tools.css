@@ -1,0 +1,881 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: #f7f9fc;
+
+    color: #1f2937;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.header {
+
+    background: white;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.header-inner {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        18px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.brand-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.brand h1 {
+
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+
+.brand p {
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+/* ==============================
+   LOGOUT
+   ============================== */
+
+.logout-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+}
+
+
+.logout-button:hover {
+
+    background: #f3f4f6;
+
+    color: #1f2937;
+}
+
+
+/* ==============================
+   CONTAINER
+   ============================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        30px 24px 60px;
+}
+
+
+/* ==============================
+   BACK BUTTON
+   ============================== */
+
+.back-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #1f4e79;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 8px 0;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   PAGE TITLE
+   ============================== */
+
+.page-title {
+
+    margin-bottom: 25px;
+}
+
+
+.eyebrow {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #6b7280;
+
+    margin-bottom: 7px;
+}
+
+
+.page-title h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+.page-title p {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   CARD
+   ============================== */
+
+.card {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.04);
+}
+
+
+/* ==============================
+   PASSPORT SUMMARY
+   ============================== */
+
+.passport-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin-bottom: 25px;
+}
+
+
+.passport-summary > div {
+
+    padding: 20px;
+
+    border-right:
+        1px solid #e5e7eb;
+}
+
+
+.passport-summary > div:last-child {
+
+    border-right: none;
+}
+
+
+.label {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #6b7280;
+
+    margin-bottom: 7px;
+}
+
+
+.passport-summary strong {
+
+    font-size: 18px;
+}
+
+
+.status-badge {
+
+    display: inline-block;
+
+    padding:
+        6px 10px;
+
+    border-radius: 999px;
+
+    background: #eef2f7;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* ==============================
+   TOOLS GRID
+   ============================== */
+
+.tools-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ==============================
+   TOOL CARD
+   ============================== */
+
+.tool-card {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.04);
+}
+
+
+.tool-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    font-weight: 700;
+
+    font-size: 18px;
+}
+
+
+.share-icon {
+
+    background: #eef4fa;
+
+    color: #1f4e79;
+
+    font-size: 24px;
+}
+
+
+.qr-icon {
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 14px;
+}
+
+
+.export-icon {
+
+    background: #eef4fa;
+
+    color: #1f4e79;
+
+    font-size: 25px;
+}
+
+
+.tool-content h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+
+.tool-content > p {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #6b7280;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   BUTTONS
+   ============================== */
+
+.primary-button,
+.secondary-button {
+
+    border-radius: 10px;
+
+    padding: 12px 15px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+
+.primary-button {
+
+    border: none;
+
+    background: #1f4e79;
+
+    color: white;
+}
+
+
+.primary-button:hover {
+
+    background: #173a5c;
+}
+
+
+.secondary-button {
+
+    border:
+        1px solid #d1d5db;
+
+    background: white;
+
+    color: #374151;
+}
+
+
+.secondary-button:hover {
+
+    background: #f9fafb;
+}
+
+
+.primary-button:active,
+.secondary-button:active {
+
+    transform: scale(0.98);
+}
+
+
+.full-button {
+
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+
+.primary-button:disabled,
+.secondary-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   SHARE RESULT
+   ============================== */
+
+.result-box {
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+
+.result-box label {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+.link-row {
+
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.link-row input {
+
+    min-width: 0;
+
+    flex: 1;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    background: white;
+}
+
+
+.copy-button {
+
+    border: none;
+
+    background: #1f4e79;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding:
+        0 12px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   QR
+   ============================== */
+
+.qr-container {
+
+    width: 100%;
+
+    min-height: 190px;
+
+    border:
+        1px dashed #d1d5db;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    background: #fafafa;
+}
+
+
+.qr-placeholder {
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.qr-image {
+
+    width: 170px;
+
+    height: 170px;
+
+    object-fit: contain;
+}
+
+
+/* ==============================
+   EXPORT
+   ============================== */
+
+.export-info {
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+.export-info div {
+
+    padding:
+        12px 14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+}
+
+
+.export-info div:last-child {
+
+    border-bottom: none;
+}
+
+
+.export-info span {
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+.export-info strong {
+
+    font-size: 12px;
+
+    text-align: right;
+
+    max-width: 60%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==============================
+   MESSAGE
+   ============================== */
+
+.small-message {
+
+    min-height: 18px;
+
+    margin-top: 9px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #6b7280;
+}
+
+
+/* ==============================
+   STATE
+   ============================== */
+
+.state {
+
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.state p {
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* ==============================
+   SPINNER
+   ============================== */
+
+.spinner {
+
+    width: 35px;
+
+    height: 35px;
+
+    border:
+        3px solid #e5e7eb;
+
+    border-top-color: #1f4e79;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==============================
+   ERROR
+   ============================== */
+
+.error-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.state h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+
+.error-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 850px) {
+
+    .tools-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header-inner {
+
+        padding:
+            15px 18px;
+    }
+
+
+    .brand p {
+
+        display: none;
+    }
+
+
+    .container {
+
+        padding:
+            22px 18px 40px;
+    }
+
+
+    .page-title h2 {
+
+        font-size: 24px;
+    }
+
+
+    .passport-summary {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .passport-summary > div {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid #e5e7eb;
+    }
+
+
+    .passport-summary > div:last-child {
+
+        border-bottom: none;
+    }
+
+
+    .tools-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9fc,
+            #e9eef7
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #1f2937;
+}
+
+
+/* ==============================
+   LOGIN CONTAINER
+   ============================== */
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+    padding: 20px;
+}
+
+
+/* ==============================
+   LOGIN CARD
+   ============================== */
+
+.login-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   BRAND
+   ============================== */
+
+.brand {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.brand-icon {
+    width: 60px;
+    height: 60px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius: 16px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.brand h1 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+
+    color: #1f2937;
+}
+
+
+.brand p {
+    font-size: 14px;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   FORM
+   ============================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.form-group input:focus {
+    border-color: #1f4e79;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 78, 121, 0.1);
+}
+
+
+/* ==============================
+   PASSWORD WRAPPER
+   ============================== */
+
+.password-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* Input password */
+
+.password-wrapper input {
+    width: 100%;
+
+    padding:
+        13px 48px 13px 14px;
+}
+
+
+/* ==============================
+   TOGGLE PASSWORD
+   ============================== */
+
+.toggle-password {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+
+    transform:
+        translateY(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition:
+        background 0.2s,
+        opacity 0.2s;
+}
+
+
+.toggle-password:hover {
+    background: #f3f4f6;
+}
+
+
+.toggle-password:active {
+    opacity: 0.7;
+}
+
+
+/* ==============================
+   LOGIN BUTTON
+   ============================== */
+
+.login-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+
+.login-button:hover {
+    background: #173a5c;
+}
+
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ==============================
+   ERROR MESSAGE
+   ============================== */
+
+.error-message {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #dc2626;
+}
+
+
+/* ==============================
+   REGISTER LINK
+   ============================== */
+
+.register-link {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.register-link a {
+    color: #1f4e79;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.register-link a:hover {
+    text-decoration: underline;
+}

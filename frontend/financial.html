@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Economic Passport - Financial Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="financial.css"
+    >
+</head>
+
+<body>
+
+    <main class="page-container">
+
+        <!-- HEADER -->
+        <header class="page-header">
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ←
+            </button>
+
+            <div>
+                <h1>Financial Profile</h1>
+
+                <p>
+                    Masukkan kondisi keuangan bisnis kamu.
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- FORM -->
+        <section class="form-card">
+
+            <form id="financialForm">
+
+                <!-- BUSINESS ID -->
+                <div class="form-group">
+
+                    <label for="businessId">
+                        Business ID
+                    </label>
+
+                    <input
+                        type="number"
+                        id="businessId"
+                        name="businessId"
+                        readonly
+                    >
+
+                    <small>
+                        Business ID diambil dari bisnis yang terakhir dibuat.
+                    </small>
+
+                </div>
+
+
+                <!-- PENDAPATAN -->
+                <div class="section-title">
+                    Kondisi Keuangan
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="monthlyRevenue">
+                        Omzet Bulanan
+                    </label>
+
+                    <input
+                        type="number"
+                        id="monthlyRevenue"
+                        name="monthlyRevenue"
+                        placeholder="Contoh: 5000000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cogsHpp">
+                        HPP / COGS
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cogsHpp"
+                        name="cogsHpp"
+                        placeholder="Contoh: 2000000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="operatingExpenses">
+                        Biaya Operasional
+                    </label>
+
+                    <input
+                        type="number"
+                        id="operatingExpenses"
+                        name="operatingExpenses"
+                        placeholder="Contoh: 1000000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="averageSellingPrice">
+                        Harga Jual Rata-rata
+                    </label>
+
+                    <input
+                        type="number"
+                        id="averageSellingPrice"
+                        name="averageSellingPrice"
+                        placeholder="Contoh: 50000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BIAYA MARKETPLACE -->
+                <div class="section-title">
+                    Biaya Marketplace & Promosi
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="marketplaceFee">
+                        Fee Marketplace (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="marketplaceFee"
+                        name="marketplaceFee"
+                        placeholder="Contoh: 10"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="promotionalCost">
+                        Biaya Promosi (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="promotionalCost"
+                        name="promotionalCost"
+                        placeholder="Contoh: 5"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="packagingCost">
+                        Biaya Packaging (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="packagingCost"
+                        name="packagingCost"
+                        placeholder="Contoh: 3"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="returnRate">
+                        Return Rate (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="returnRate"
+                        name="returnRate"
+                        placeholder="Contoh: 2"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TARGET -->
+                <div class="section-title">
+                    Target Bisnis
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="desiredMargin">
+                        Margin Minimum yang Diinginkan (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="desiredMargin"
+                        name="desiredMargin"
+                        placeholder="Contoh: 15"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="maxPlatformCost">
+                        Maksimum Biaya Platform (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="maxPlatformCost"
+                        name="maxPlatformCost"
+                        placeholder="Contoh: 12"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="maxPromotionBurden">
+                        Maksimum Beban Promosi (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="maxPromotionBurden"
+                        name="maxPromotionBurden"
+                        placeholder="Contoh: 8"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="targetMonthlyProfit">
+                        Target Profit Bulanan
+                    </label>
+
+                    <input
+                        type="number"
+                        id="targetMonthlyProfit"
+                        name="targetMonthlyProfit"
+                        placeholder="Contoh: 1500000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="minLivingIncome">
+                        Minimum Pendapatan untuk Kebutuhan Hidup
+                    </label>
+
+                    <input
+                        type="number"
+                        id="minLivingIncome"
+                        name="minLivingIncome"
+                        placeholder="Contoh: 2000000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- =====================================================
+     SOCIAL & SUSTAINABILITY
+===================================================== -->
+
+<div class="section-title">
+    Sosial & Sustainability
+</div>
+
+<p class="section-description">
+    Informasi ini digunakan untuk menilai dampak sosial,
+    penggunaan sumber daya, dan praktik keberlanjutan bisnis.
+</p>
+
+
+<!-- =========================
+     SOCIAL
+========================= -->
+
+<div class="subsection-title">
+    Aspek Sosial
+</div>
+
+
+<div class="form-group">
+
+    <label for="consumerAffordability">
+        Consumer Affordability Index
+    </label>
+
+    <input
+        type="number"
+        id="consumerAffordability"
+        name="consumerAffordability"
+        placeholder="Contoh: 75"
+        min="0"
+        max="100"
+        step="0.01"
+        required
+    >
+
+    <small>
+        Seberapa terjangkau harga produk bagi konsumen.
+    </small>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="employeeCount">
+        Jumlah Karyawan
+    </label>
+
+    <input
+        type="number"
+        id="employeeCount"
+        name="employeeCount"
+        placeholder="Contoh: 3"
+        min="0"
+        step="1"
+    >
+
+    <small>
+        Jumlah orang yang bekerja dalam bisnis.
+    </small>
+
+</div>
+
+
+<div class="checkbox-group">
+
+    <input
+        type="checkbox"
+        id="employeeFairWage"
+        name="employeeFairWage"
+    >
+
+    <label for="employeeFairWage">
+        Bisnis menerapkan upah yang layak bagi karyawan
+    </label>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="fairWageBasis">
+        Dasar Penentuan Upah
+    </label>
+
+    <select
+        id="fairWageBasis"
+        name="fairWageBasis"
+    >
+
+        <option value="">
+            Pilih dasar penentuan upah
+        </option>
+
+        <option value="UMK">
+            Mengacu UMK/UMP
+        </option>
+
+        <option value="Kesepakatan">
+            Berdasarkan kesepakatan
+        </option>
+
+        <option value="Persentase_Penjualan">
+            Berdasarkan persentase penjualan
+        </option>
+
+        <option value="Lainnya">
+            Lainnya
+        </option>
+
+    </select>
+
+</div>
+
+
+<!-- =========================
+     MATERIAL
+========================= -->
+
+<div class="subsection-title">
+    Bahan & Material
+</div>
+
+
+<div class="form-group">
+
+    <label for="mainMaterials">
+        Bahan Utama yang Digunakan
+    </label>
+
+    <textarea
+        id="mainMaterials"
+        name="mainMaterials"
+        rows="3"
+        placeholder="Contoh: Kain katun, benang, plastik, kardus"
+    ></textarea>
+
+    <small>
+        Tuliskan bahan utama yang digunakan untuk menghasilkan produk.
+    </small>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="materialOrigin">
+        Asal Bahan
+    </label>
+
+    <select
+        id="materialOrigin"
+        name="materialOrigin"
+    >
+
+        <option value="">
+            Pilih asal bahan
+        </option>
+
+        <option value="Lokal">
+            Mayoritas bahan lokal
+        </option>
+
+        <option value="Campuran">
+            Campuran lokal dan luar daerah
+        </option>
+
+        <option value="Impor">
+            Mayoritas bahan impor
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="recycledMaterialPercent">
+        Persentase Bahan Daur Ulang (%)
+    </label>
+
+    <input
+        type="number"
+        id="recycledMaterialPercent"
+        name="recycledMaterialPercent"
+        placeholder="Contoh: 30"
+        min="0"
+        max="100"
+        step="0.01"
+    >
+
+    <small>
+        Perkiraan persentase bahan produk yang berasal dari material daur ulang.
+    </small>
+
+</div>
+
+
+<!-- =========================
+     PACKAGING
+========================= -->
+
+<div class="subsection-title">
+    Packaging
+</div>
+
+
+<div class="form-group">
+
+    <label for="packagingMaterial">
+        Jenis Bahan Packaging
+    </label>
+
+    <select
+        id="packagingMaterial"
+        name="packagingMaterial"
+    >
+
+        <option value="">
+            Pilih jenis packaging
+        </option>
+
+        <option value="Plastik">
+            Plastik
+        </option>
+
+        <option value="Kertas_Kardus">
+            Kertas / Kardus
+        </option>
+
+        <option value="Biodegradable">
+            Biodegradable
+        </option>
+
+        <option value="Daur_Ulang">
+            Material daur ulang
+        </option>
+
+        <option value="Campuran">
+            Campuran
+        </option>
+
+        <option value="Lainnya">
+            Lainnya
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="checkbox-group">
+
+    <input
+        type="checkbox"
+        id="ecoPackaging"
+        name="ecoPackaging"
+    >
+
+    <label for="ecoPackaging">
+        Packaging menggunakan material ramah lingkungan
+    </label>
+
+</div>
+
+
+<div class="checkbox-group">
+
+    <input
+        type="checkbox"
+        id="packagingReusable"
+        name="packagingReusable"
+    >
+
+    <label for="packagingReusable">
+        Packaging dapat digunakan kembali
+    </label>
+
+</div>
+
+
+<!-- =========================
+     WASTE MANAGEMENT
+========================= -->
+
+<div class="subsection-title">
+    Pengelolaan Limbah
+</div>
+
+
+<div class="form-group">
+
+    <label for="wasteManagement">
+        Pengelolaan Limbah Bisnis
+    </label>
+
+    <select
+        id="wasteManagement"
+        name="wasteManagement"
+    >
+
+        <option value="">
+            Pilih kondisi
+        </option>
+
+        <option value="Tidak_Dikelola">
+            Belum dikelola
+        </option>
+
+        <option value="Dipisahkan">
+            Limbah dipisahkan
+        </option>
+
+        <option value="Didaur_Ulang">
+            Sebagian didaur ulang
+        </option>
+
+        <option value="Dikelola_Pihak_Ketiga">
+            Dikelola pihak ketiga
+        </option>
+
+        <option value="Zero_Waste">
+            Menerapkan prinsip minim/zero waste
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group">
+
+    <label for="wasteDescription">
+        Jenis Limbah yang Dihasilkan
+    </label>
+
+    <textarea
+        id="wasteDescription"
+        name="wasteDescription"
+        rows="3"
+        placeholder="Contoh: sisa kain, plastik, kardus, bahan makanan"
+    ></textarea>
+
+</div>
+
+
+<!-- =========================
+     ENERGY
+========================= -->
+
+<div class="subsection-title">
+    Penggunaan Energi
+</div>
+
+
+<div class="form-group">
+
+    <label for="energySource">
+        Sumber Energi Utama
+    </label>
+
+    <select
+        id="energySource"
+        name="energySource"
+    >
+
+        <option value="">
+            Pilih sumber energi
+        </option>
+
+        <option value="Listrik">
+            Listrik PLN
+        </option>
+
+        <option value="Listrik_dan_Genset">
+            Listrik + Genset
+        </option>
+
+        <option value="Energi_Terbarukan">
+            Energi terbarukan
+        </option>
+
+        <option value="Campuran">
+            Campuran
+        </option>
+
+    </select>
+
+</div>
+
+
+                <!-- PERIODE -->
+                <div class="section-title">
+                    Periode Data
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="periodStart">
+                            Periode Mulai
+                        </label>
+
+                        <input
+                            type="date"
+                            id="periodStart"
+                            name="periodStart"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="periodEnd">
+                            Periode Selesai
+                        </label>
+
+                        <input
+                            type="date"
+                            id="periodEnd"
+                            name="periodEnd"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ERROR / SUCCESS -->
+                <p
+                    id="message"
+                    class="message"
+                ></p>
+
+
+                <!-- SAVE -->
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="save-button"
+                >
+                    Simpan Financial Profile
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="financial.js"></script>
+
+</body>
+
+</html>

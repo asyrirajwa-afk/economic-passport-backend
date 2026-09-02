@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Economic Passport - Marketplace Analysis
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="marketplace.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+    <header class="marketplace-header">
+
+        <div class="header-inner">
+
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+                aria-label="Kembali"
+            >
+                ←
+            </button>
+
+
+            <div class="header-brand">
+
+                <div class="brand-icon">
+                    EP
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        Economic Passport
+                    </h1>
+
+                    <p>
+                        Marketplace Analysis
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="marketplace-container">
+
+
+        <!-- ==================================================
+             PAGE INTRO
+        =================================================== -->
+
+        <section class="page-intro">
+
+            <span class="section-label">
+                MARKETPLACE ANALYSIS
+            </span>
+
+
+            <h2>
+                Marketplace yang Cocok
+                untuk Bisnis Kamu
+            </h2>
+
+
+            <p>
+                Bandingkan biaya, potensi pasar,
+                dan tingkat kesesuaian setiap
+                marketplace dengan kondisi bisnis kamu.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             BUSINESS INFO
+        =================================================== -->
+
+        <section
+            id="businessInfo"
+            class="business-info"
+        >
+
+            <div class="business-info-item">
+
+                <span>
+                    Bisnis yang dianalisis
+                </span>
+
+                <strong id="businessName">
+                    Memuat...
+                </strong>
+
+            </div>
+
+
+            <div class="business-info-item">
+
+                <span>
+                    Kategori
+                </span>
+
+                <strong id="businessCategory">
+                    -
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             RECOMMENDED MARKETPLACE
+        =================================================== -->
+
+        <section
+            id="recommendedSection"
+            class="recommended-card"
+            style="display: none;"
+        >
+
+            <div class="recommended-badge">
+                REKOMENDASI UTAMA
+            </div>
+
+
+            <div class="recommended-content">
+
+
+                <div class="recommended-logo">
+                    EP
+                </div>
+
+
+                <div class="recommended-main">
+
+                    <span class="recommended-label">
+                        Marketplace terbaik untuk bisnis ini
+                    </span>
+
+
+                    <h2 id="recommendedName">
+                        -
+                    </h2>
+
+
+                    <p id="recommendedReason">
+                        -
+                    </p>
+
+                </div>
+
+
+                <div class="recommended-score">
+
+                    <span>
+                        Score
+                    </span>
+
+
+                    <strong id="recommendedScore">
+                        -
+                    </strong>
+
+
+                    <small>
+                        / 100
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!-- ==================================================
+     MARKETPLACE SIMULATION
+=================================================== -->
+
+<section
+    id="simulationSection"
+    class="simulation-section"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                WHAT-IF SIMULATION
+            </span>
+
+            <h2>
+                Simulasi Marketplace
+            </h2>
+
+            <p>
+                Uji berbagai skenario biaya, promo,
+                dan harga untuk melihat dampaknya
+                terhadap keuntungan bisnis.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SIMULATION CARD -->
+
+    <div class="simulation-card">
+
+
+        <!-- INPUT -->
+
+        <div class="simulation-inputs">
+
+
+            <div class="simulation-intro">
+
+                <div class="simulation-icon">
+                    %
+                </div>
+
+                <div>
+
+                    <h3>
+                        Uji Skenario Bisnis
+                    </h3>
+
+                    <p>
+                        Pilih marketplace dan ubah
+                        kondisi penjualan untuk melihat
+                        estimasi hasilnya.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MARKETPLACE -->
+
+            <div class="simulation-field">
+
+                <label for="simulationMarketplace">
+                    Marketplace
+                </label>
+
+                <select
+                    id="simulationMarketplace"
+                >
+
+                    <option value="">
+                        Pilih marketplace
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SELLING PRICE -->
+
+            <div class="simulation-field">
+
+                <label for="simulationPrice">
+                    Harga Jual per Produk
+                </label>
+
+                <div class="input-prefix">
+
+                    <span>
+                        Rp
+                    </span>
+
+                    <input
+                        type="number"
+                        id="simulationPrice"
+                        min="0"
+                        step="1000"
+                        placeholder="100000"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDERS -->
+
+            <div class="simulation-field">
+
+                <label for="simulationOrders">
+                    Penjualan per Bulan
+                </label>
+
+                <input
+                    type="number"
+                    id="simulationOrders"
+                    min="1"
+                    step="1"
+                    placeholder="100"
+                >
+
+                <small>
+                    Estimasi jumlah produk terjual per bulan.
+                </small>
+
+            </div>
+
+
+            <!-- SCENARIO -->
+
+            <div class="simulation-field">
+
+                <label for="simulationScenario">
+                    Skenario
+                </label>
+
+                <select
+                    id="simulationScenario"
+                >
+
+                    <option value="current">
+                        Kondisi Saat Ini
+                    </option>
+
+                    <option value="fee_down_2">
+                        Biaya Marketplace Turun 2%
+                    </option>
+
+                    <option value="promo_down_2">
+                        Biaya Promo Turun 2%
+                    </option>
+
+                    <option value="price_up_5">
+                        Harga Jual Naik 5%
+                    </option>
+
+                    <option value="price_down_5">
+                        Harga Jual Turun 5%
+                    </option>
+
+                    <option value="combined">
+                        Biaya Turun 2% + Harga Naik 5%
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="simulateButton"
+                class="simulate-button"
+            >
+                Jalankan Simulasi
+            </button>
+
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div
+            id="simulationResult"
+            class="simulation-result"
+        >
+
+            <div class="simulation-result-empty">
+
+                <strong>
+                    Belum ada simulasi
+                </strong>
+
+                <p>
+                    Pilih marketplace dan skenario,
+                    lalu jalankan simulasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+        <!-- ==================================================
+             MARKETPLACE SECTION
+        =================================================== -->
+
+        <section class="marketplace-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COMPARISON
+                    </span>
+
+
+                    <h2>
+                        Perbandingan Marketplace
+                    </h2>
+
+
+                    <p>
+                        Semakin tinggi score,
+                        semakin sesuai dengan bisnis kamu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 MARKETPLACE LIST
+            =================================================== -->
+
+            <div
+                id="marketplaceList"
+                class="marketplace-list"
+            >
+
+                <!-- Loading -->
+
+                <div class="loading-card">
+
+                    <div class="loading-spinner">
+                    </div>
+
+
+                    <p>
+                        Memuat marketplace...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ERROR STATE
+        =================================================== -->
+
+        <section
+            id="errorState"
+            class="error-state"
+            style="display: none;"
+        >
+
+            <div class="error-icon">
+                !
+            </div>
+
+
+            <h2>
+                Tidak dapat memuat data
+            </h2>
+
+
+            <p id="errorMessage">
+                Terjadi kesalahan.
+            </p>
+
+
+            <button
+                type="button"
+                id="retryButton"
+                class="primary-button"
+            >
+                Coba Lagi
+            </button>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script
+        src="marketplace.js"
+    ></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Improvement Priorities - Economic Passport
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="improvement-priorities.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                EP
+            </div>
+
+            <div>
+
+                <h1>
+                    Economic Passport
+                </h1>
+
+                <p>
+                    Business Intelligence for Better Decisions
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="logoutButton"
+            class="logout"
+            type="button"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- BACK -->
+
+    <button
+        id="backButton"
+        class="back"
+        type="button"
+    >
+        ← Kembali ke Projection
+    </button>
+
+
+
+    <!-- LOADING -->
+
+    <section
+        id="loadingState"
+        class="state"
+    >
+
+        <div class="spinner"></div>
+
+        <p>
+            Memuat improvement priorities...
+        </p>
+
+    </section>
+
+
+
+    <!-- ERROR -->
+
+    <section
+        id="errorState"
+        class="state hidden"
+    >
+
+        <div class="error-icon">
+            !
+        </div>
+
+        <h2>
+            Data tidak dapat dimuat
+        </h2>
+
+        <p id="errorMessage">
+            Terjadi kesalahan saat mengambil data.
+        </p>
+
+
+        <div class="actions">
+
+            <button
+                id="retryButton"
+                class="primary"
+                type="button"
+            >
+                Coba Lagi
+            </button>
+
+
+            <button
+                id="errorBackButton"
+                class="secondary"
+                type="button"
+            >
+                Kembali
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTENT -->
+
+    <div
+        id="content"
+        class="hidden"
+    >
+
+
+        <!-- TITLE -->
+
+        <section class="title">
+
+            <div class="eyebrow">
+                IMPROVEMENT PRIORITIES
+            </div>
+
+            <h2 id="businessName">
+                Economic Passport
+            </h2>
+
+            <p>
+                Tentukan area bisnis yang perlu diperbaiki berdasarkan score dan target.
+            </p>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="summary">
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Overall Score
+                </span>
+
+                <b id="overallScore">
+                    0.00
+                </b>
+
+                <p id="passportStatus">
+                    -
+                </p>
+
+            </article>
+
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Target Score
+                </span>
+
+                <b id="targetScore">
+                    80
+                </b>
+
+                <p>
+                    Minimum target
+                </p>
+
+            </article>
+
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Perlu Tindakan
+                </span>
+
+                <b id="actionCount">
+                    0
+                </b>
+
+                <p>
+                    Area di bawah target
+                </p>
+
+            </article>
+
+
+
+            <article class="card stat">
+
+                <span class="label">
+                    Sudah Tercapai
+                </span>
+
+                <b id="achievedCount">
+                    0
+                </b>
+
+                <p>
+                    Area mencapai target
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- TOP PRIORITY -->
+
+        <section
+            id="topPriorityCard"
+            class="card top-priority"
+        >
+
+            <div class="priority-icon">
+                1
+            </div>
+
+
+            <div class="priority-content">
+
+                <div class="eyebrow">
+                    TOP PRIORITY
+                </div>
+
+                <h3 id="topPriorityCategory">
+                    -
+                </h3>
+
+                <p id="topPriorityDescription">
+                    -
+                </p>
+
+
+                <div class="priority-meta">
+
+                    <span>
+                        Score:
+                        <b id="topPriorityScore">
+                            0
+                        </b>
+                    </span>
+
+                    <span>
+                        Gap:
+                        <b id="topPriorityGap">
+                            0
+                        </b>
+                    </span>
+
+                    <span
+                        id="topPrioritySeverity"
+                        class="severity"
+                    >
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PRIORITY LIST -->
+
+        <section class="card section">
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        PRIORITY RANKING
+                    </div>
+
+                    <h3>
+                        Urutan Area yang Perlu Diperbaiki
+                    </h3>
+
+                </div>
+
+
+                <span
+                    id="priorityCount"
+                    class="count-badge"
+                >
+                    0 Area
+                </span>
+
+            </div>
+
+
+            <div
+                id="priorityList"
+                class="priority-list"
+            >
+            </div>
+
+        </section>
+
+
+
+        <!-- ACHIEVED -->
+
+        <section
+            id="achievedSection"
+            class="card section"
+        >
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        TARGET ACHIEVED
+                    </div>
+
+                    <h3>
+                        Area yang Sudah Mencapai Target
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="achievedList"
+                class="achieved-list"
+            >
+            </div>
+
+        </section>
+
+
+
+        <!-- EXPLANATION -->
+
+        <section class="card explanation">
+
+            <div class="eyebrow">
+                HOW IT WORKS
+            </div>
+
+            <h3>
+                Bagaimana Prioritas Ditentukan?
+            </h3>
+
+            <p>
+                Sistem mengurutkan area berdasarkan score saat ini.
+                Area dengan score paling rendah ditempatkan sebagai prioritas lebih tinggi.
+                Semakin besar gap terhadap target 80, semakin besar kebutuhan perbaikan.
+            </p>
+
+        </section>
+
+
+
+        <!-- NAVIGATION -->
+
+        <div class="navigation-row">
+
+
+            <button
+                id="projectionButton"
+                class="secondary-button"
+                type="button"
+            >
+                ← Projection
+            </button>
+
+
+            <button
+                id="actionPlanButton"
+                class="primary-button"
+                type="button"
+            >
+                Lihat Action Plan →
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<script
+    src="improvement-priorities.js"
+></script>
+
+
+</body>
+
+</html>
