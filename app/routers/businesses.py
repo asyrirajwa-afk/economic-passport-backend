@@ -250,6 +250,61 @@ def create_business(
 
 
 # =====================================================
+# GET BUSINESS BY ID
+# =====================================================
+
+@router.get("/{business_id}")
+def get_business(
+    business_id: int,
+    current_user=Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    query = text("""
+        SELECT
+            id,
+            user_id,
+            business_name,
+            business_category,
+            business_size,
+            product_category,
+            primary_marketplace,
+            seller_city,
+            created_at
+        FROM businesses
+        WHERE id = :business_id
+        AND user_id = :user_id
+        LIMIT 1
+    """)
+
+    business = db.execute(
+        query,
+        {
+            "business_id": business_id,
+            "user_id": current_user["id"]
+        }
+    ).mappings().first()
+
+    if not business:
+        raise HTTPException(
+            status_code=404,
+            detail="Bisnis tidak ditemukan atau bukan milik user"
+        )
+
+    return {
+        "business": {
+            "id": business["id"],
+            "user_id": business["user_id"],
+            "business_name": business["business_name"],
+            "business_category": business["business_category"],
+            "business_size": business["business_size"],
+            "product_category": business["product_category"],
+            "primary_marketplace": business["primary_marketplace"],
+            "seller_city": business["seller_city"],
+            "created_at": str(business["created_at"])
+        }
+    }
+
+# =====================================================
 # DELETE BUSINESS
 # =====================================================
 
