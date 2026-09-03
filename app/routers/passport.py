@@ -16646,10 +16646,7 @@ def get_passport_verification_summary(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE) AS age_days
     """)
 
     age_result = db.execute(
