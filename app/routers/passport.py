@@ -2319,8 +2319,8 @@ def get_public_passport(
     # =================================================
 
     age_query = text("""
-    SELECT
-        CURRENT_DATE - CAST(:created_at AS DATE)
+        SELECT
+            CURRENT_DATE - CAST(:created_at AS DATE)
             AS age_days
     """)
 
@@ -2714,10 +2714,8 @@ def get_public_passport_by_token(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -5150,10 +5148,8 @@ def get_passport_status_summary(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -8380,10 +8376,8 @@ def verify_public_passport(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -8785,10 +8779,8 @@ def verify_passport_qr(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -9289,10 +9281,8 @@ def get_passport_renewal_status(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -9516,10 +9506,8 @@ def get_passport_renewal_preview(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -10631,10 +10619,8 @@ def get_passport_dashboard(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -17291,10 +17277,8 @@ def get_passport_share_data(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -17497,10 +17481,8 @@ def verify_public_passport(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -18655,10 +18637,8 @@ def export_passport_data(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
@@ -19021,10 +19001,8 @@ def get_passport_final_summary(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
