@@ -720,3 +720,267 @@ button {
         font-size: 12px;
     }
 }
+
+/* =========================================================
+   SCORE HISTORY - DYNAMIC CHART
+   Dibuat agar elemen grafik yang dihasilkan JS benar-benar terlihat.
+   ========================================================= */
+
+.score-chart {
+    width: 100%;
+    min-height: 315px;
+}
+
+.chart-area {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    background: #fbfcfc;
+    border-radius: 10px;
+}
+
+.chart-grid-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e5ece9;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.chart-label-y {
+    position: absolute;
+    left: 0;
+    width: 36px;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1;
+    text-align: left;
+    z-index: 2;
+}
+
+.chart-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 270px;
+    overflow: visible;
+    z-index: 1;
+}
+
+.chart-line {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.chart-point {
+    fill: var(--primary);
+    stroke: var(--white);
+    stroke-width: 2.5;
+    vector-effect: non-scaling-stroke;
+}
+
+.chart-x-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 30px;
+    padding: 10px 8px 0 50px;
+}
+
+.chart-x-label {
+    flex: 1 1 0;
+    min-width: 0;
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.3;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   SCORE HISTORY - ASSESSMENT CARDS
+   ========================================================= */
+
+.category-section .category-list {
+    gap: 12px;
+}
+
+.history-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) auto;
+    grid-template-areas:
+        "main status"
+        "scores scores";
+    gap: 14px 20px;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    box-shadow: 0 4px 14px rgba(23, 59, 51, 0.035);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.history-item:hover {
+    transform: translateY(-1px);
+    border-color: #cbdcd5;
+    box-shadow: 0 7px 20px rgba(23, 59, 51, 0.07);
+}
+
+.history-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.history-main strong {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.history-main small {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.history-scores {
+    grid-area: scores;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.history-score {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 11px;
+    background: #f8faf9;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: var(--muted);
+    font-size: 8px;
+    line-height: 1.25;
+}
+
+.history-score strong {
+    color: var(--text);
+    font-size: 12px;
+}
+
+.history-status {
+    grid-area: status;
+    align-self: center;
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+    font-size: 9px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TREND STATES
+   ========================================================= */
+
+#changeCard.improving {
+    border-color: #cce8dc;
+    background: #f4fbf7;
+}
+
+#changeCard.declining {
+    border-color: #efd5d5;
+    background: #fff7f7;
+}
+
+#changeCard.stable {
+    border-color: var(--border);
+}
+
+#changeCard.improving #scoreChange {
+    color: var(--good);
+}
+
+#changeCard.declining #scoreChange {
+    color: var(--danger);
+}
+
+#changeCard.stable #scoreChange {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   CHART + HISTORY MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .score-chart {
+        min-height: 300px;
+    }
+
+    .chart-area,
+    .chart-svg {
+        height: 250px;
+    }
+
+    .chart-x-labels {
+        padding-left: 40px;
+    }
+
+    .history-item {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main"
+            "status"
+            "scores";
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .history-status {
+        justify-self: start;
+    }
+
+    .history-scores {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .chart-x-labels {
+        padding-left: 35px;
+        gap: 5px;
+    }
+
+    .chart-x-label {
+        font-size: 8px;
+    }
+
+    .history-scores {
+        grid-template-columns: 1fr;
+    }
+}
