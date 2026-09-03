@@ -30,7 +30,7 @@ def get_marketplaces(db: Session = Depends(get_db)):
             partner_status,
             is_active
         FROM marketplaces
-        WHERE is_active = 1
+        WHERE is_active = TRUE
         ORDER BY id ASC
     """)
 
