@@ -2319,11 +2319,9 @@ def get_public_passport(
     # =================================================
 
     age_query = text("""
-        SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+    SELECT
+        CURRENT_DATE - CAST(:created_at AS DATE)
+            AS age_days
     """)
 
     age_result = db.execute(
