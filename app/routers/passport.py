@@ -874,6 +874,7 @@ def create_economic_passport(
             :marketplace_health_score,
             :status
         )
+        RETURNING id
     """)
 
     result = db.execute(
@@ -892,13 +893,15 @@ def create_economic_passport(
         }
     )
 
+    # PostgreSQL tidak menyediakan MySQL's result.lastrowid.
+    # ID hasil INSERT diambil melalui RETURNING id.
+    passport_id = result.scalar_one()
+
     db.commit()
 
     # =====================================================
     # 12. AMBIL ID PASSPORT
     # =====================================================
-
-    passport_id = result.lastrowid
 
     # =====================================================
     # 13. RESPONSE
@@ -9049,10 +9052,7 @@ def get_passport_verification_history(
 
         age_query = text("""
             SELECT
-                DATEDIFF(
-                    CURRENT_TIMESTAMP,
-                    :created_at
-                ) AS age_days
+                CURRENT_DATE - CAST(:created_at AS DATE) AS age_days
         """)
 
         age_result = db.execute(
@@ -16388,10 +16388,7 @@ def get_passport_status_summary(
 
     age_query = text("""
         SELECT
-            DATEDIFF(
-                CURRENT_TIMESTAMP,
-                :created_at
-            ) AS age_days
+            CURRENT_DATE - CAST(:created_at AS DATE) AS age_days
     """)
 
     age_result = db.execute(
@@ -16716,10 +16713,8 @@ def get_passport_verification_summary(
 
     expiry_query = text("""
         SELECT
-            DATE_ADD(
-                :created_at,
-                INTERVAL :validity_days DAY
-            ) AS expiry_date
+            CAST(:created_at AS TIMESTAMP)
+            + (:validity_days * INTERVAL '1 day') AS expiry_date
     """)
 
     expiry_result = db.execute(
